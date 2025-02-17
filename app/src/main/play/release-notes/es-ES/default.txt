@@ -1,5 +1,5 @@
 V 3.1
-- Nuevo modulo: Webhook
+- Nuevo modulo: Webhook. Gracias a anoop-b!
 - Nuevas automatizaciones: limpiar y cerrar
 - Mejora: Permitir varios regex en las automatizaciones
 - Mejora: estilo del modulo historial
