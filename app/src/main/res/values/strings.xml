@@ -201,6 +201,7 @@ Built-in patterns include:
     <string name="mPttrn_fix">Apply</string>
     <string name="mPttrn_fixed">Applied - %s</string>
     <string name="mPttrn_ascii">Warning! Non-ASCII characters found.</string>
+    <string name="mPttrn_upperDomain">Warning! Upper case letter in domain.</string>
     <string name="mPttrn_http">HTTP link. Consider using HTTPS.</string>
     <string name="mPttrn_noSchemeHttp">Missing HTTP scheme.</string>
     <string name="mPttrn_noSchemeHttps">Missing HTTPS scheme.</string>
