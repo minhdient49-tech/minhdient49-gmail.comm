@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +29,7 @@ public class JsonEditorActivity extends Activity {
 
     private JsonEditorInterface provider;
     private TextView editor;
-    private View info;
+    private ViewGroup info;
 
     // ------------------- listeners -------------------
 
@@ -53,6 +54,7 @@ public class JsonEditorActivity extends Activity {
         }
 
         info = findViewById(R.id.info);
+        AndroidUtils.limitHeight(info);
         this.<TextView>findViewById(R.id.description).setText(provider.getEditorDescription());
 
         editor = findViewById(R.id.data);

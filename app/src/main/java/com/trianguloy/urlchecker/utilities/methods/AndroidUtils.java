@@ -16,6 +16,8 @@ import android.util.Patterns;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -257,5 +259,18 @@ public interface AndroidUtils {
         // "Redirects to _{marker}_" -> "Redirects to _{redirectionUrl}_"
         text.replace(start, end, url);
         return text;
+    }
+
+    /** Reduces the height of a view to their children's size (if less) */
+    static void limitHeight(ViewGroup view) {
+        view.post(() -> {
+            int childHeight = 0;
+            for (int i = 0; i < view.getChildCount(); i++) {
+                childHeight += view.getChildAt(i).getHeight();
+            }
+            if (view.getHeight() > childHeight) {
+                view.setLayoutParams(new LinearLayout.LayoutParams(view.getWidth(), childHeight));
+            }
+        });
     }
 }
