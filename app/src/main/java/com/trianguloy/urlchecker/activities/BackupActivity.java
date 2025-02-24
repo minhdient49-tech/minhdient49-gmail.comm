@@ -470,7 +470,7 @@ public class BackupActivity extends Activity {
     }
 
     private String getInitialFile() {
-        return "UrlChecker_" + new SimpleDateFormat("yyyyMMddHHmmss", Locale.US).format(new Date()) + ".ucbckp";
+        return "URLCheck_" + new SimpleDateFormat("yyyyMMddHHmmss", Locale.US).format(new Date()) + ".ucbckp";
     }
 
     private void showAdvanced() {
