@@ -9,11 +9,11 @@
 # URLCheck
 
 <!-- ---------- Badges ---------- -->
-[![App-Code Size](https://img.shields.io/github/languages/code-size/trianguloy/urlchecker.svg)](https://api.github.com/repos/TrianguloY/UrlChecker)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/TrianguloY/UrlChecker)](https://github.com/TrianguloY/UrlChecker/pulse/monthly)
+[![App-Code Size](https://img.shields.io/github/languages/code-size/trianguloy/urlchecker.svg)](https://api.github.com/repos/TrianguloY/URLCheck)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/TrianguloY/URLCheck)](https://github.com/TrianguloY/URLCheck/pulse/monthly)
 [![Weblate (translation percentage)](https://hosted.weblate.org/widgets/urlcheck/-/svg-badge.svg)](https://hosted.weblate.org/engage/urlcheck/)
 
-[![GitHub version (gradle versionName)](https://img.shields.io/badge/dynamic/json?label=Latest%20version&color=white&query=version&url=https%3A%2F%2Fgithub.com%2FTrianguloY%2FUrlChecker%2Freleases%2Fdownload%2Flatest%2Fshields.json)](https://github.com/TrianguloY/UrlChecker/blob/master/app/build.gradle)
+[![GitHub version (gradle versionName)](https://img.shields.io/badge/dynamic/json?label=Latest%20version&color=white&query=version&url=https%3A%2F%2Fgithub.com%2FTrianguloY%2FURLCheck%2Freleases%2Fdownload%2Flatest%2Fshields.json)](https://github.com/TrianguloY/URLCheck/blob/master/app/build.gradle)
 [![F-Droid](https://img.shields.io/f-droid/v/com.trianguloy.urlchecker?label=F-Droid%20version)](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.trianguloy.urlchecker.yml)
 [![PlayShields](https://img.shields.io/endpoint?color=green&url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dcom.trianguloy.urlchecker%26l%3DPlay%2520Store%2520version%26m%3Dv%24version)](https://play.google.com/store/apps/details?id=com.trianguloy.urlchecker)
 [![IzzyShields](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.trianguloy.urlchecker)](https://apt.izzysoft.de/fdroid/index/apk/com.trianguloy.urlchecker)
@@ -58,7 +58,7 @@ Remember to use the backup/restore functionality to migrate your data!
 Special contributors: [Ilithy](https://github.com/Ilithy), [PabloOQ](https://github.com/PabloOQ), [anoop-b](https://github.com/anoop-b)
 
 All contributors: \
-[![Contributors](https://contrib.rocks/image?repo=TrianguloY/UrlChecker&anon=1)](https://github.com/TrianguloY/UrlChecker/graphs/contributors) \
+[![Contributors](https://contrib.rocks/image?repo=TrianguloY/URLCheck&anon=1)](https://github.com/TrianguloY/URLCheck/graphs/contributors) \
 and [404potato](https://github.com/404potato) and maybe some more from [Weblate](https://hosted.weblate.org/engage/urlcheck/).
 
 <hr>
@@ -89,7 +89,7 @@ to remove trackers, affiliate links, unnecessary elements, check Hosts, facilita
 ## Contribution
 
 **All help is greatly welcomed!**  
-Feel free to [**suggest changes**](https://github.com/TrianguloY/UrlChecker/issues/new), request a [**new feature**](https://github.com/TrianguloY/UrlChecker/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=), create [**bug report**](https://github.com/TrianguloY/UrlChecker/issues/new?assignees=&labels=bug&template=bug_report.md&title=) or even [**pull request**](https://help.github.com/articles/about-pull-requests/). _(from a simple typo fix to a full new module or even more!)_  
+Feel free to [**suggest changes**](https://github.com/TrianguloY/URLCheck/issues/new), request a [**new feature**](https://github.com/TrianguloY/URLCheck/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=), create [**bug report**](https://github.com/TrianguloY/URLCheck/issues/new?assignees=&labels=bug&template=bug_report.md&title=) or even [**pull request**](https://help.github.com/articles/about-pull-requests/). _(from a simple typo fix to a full new module or even more!)_  
 **Translations are also greatly appreciated.**
 
 See [CONTRIBUTING](docs/CONTRIBUTING.md) for code or translation details and tips.
@@ -114,4 +114,4 @@ You can use parts of this project in your own ones, or upload modified versions 
 **How to credit:**
 
 - You must add my nick [**TrianguloY**](https://github.com/TrianguloY/) in an `about` or `acknowledgments` section visible to the user.
-- You must add a link to this [**GitHub main page**](https://github.com/TrianguloY/UrlChecker) or subpage (if you used a part of the code or an asset) in an `about` or `acknowledgments` section visible to the user.
+- You must add a link to this [**GitHub main page**](https://github.com/TrianguloY/URLCheck) or subpage (if you used a part of the code or an asset) in an `about` or `acknowledgments` section visible to the user.

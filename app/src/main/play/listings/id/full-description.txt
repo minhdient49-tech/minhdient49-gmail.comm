@@ -2,7 +2,7 @@ Aplikasi ini bertindak sebagai perantara saat membuka tautan url. Ketika Anda me
 Sangat berguna ketika Anda perlu membuka tautan eksternal baik dari email, aplikasi jejaring sosial, atau lainnya.
 
 
-URLCheck dikembangkan oleh TrianguloY yang pada awalnya digunakan hanya untuk penggunaan pribadi. Aplikasi ini bersumber terbuka (di bawah lisensi CC BY 4.0), gratis, tanpa iklan atau pelacak, berukuran kecil, dan menggunakan izin sesedikit mungkin (hanya izin internet demi pemeriksaan modul yang hanya dilakukan ketika pengguna memberikan izin). Kode sumber terrsedia di GitHub, sehingga jika Anda ingin memberikan saran perubahan, melakukan modifikasi, atau mengusulkan terjemahan baru, silakan buka: https://github.com/TrianguloY/UrlChecker
+URLCheck dikembangkan oleh TrianguloY yang pada awalnya digunakan hanya untuk penggunaan pribadi. Aplikasi ini bersumber terbuka (di bawah lisensi CC BY 4.0), gratis, tanpa iklan atau pelacak, berukuran kecil, dan menggunakan izin sesedikit mungkin (hanya izin internet demi pemeriksaan modul yang hanya dilakukan ketika pengguna memberikan izin). Kode sumber terrsedia di GitHub, sehingga jika Anda ingin memberikan saran perubahan, melakukan modifikasi, atau mengusulkan terjemahan baru, silakan buka: https://github.com/TrianguloY/URLCheck
 
 
 Aplikasi ini disusun dengan pengaturan modular. Anda dapat mengaktifkan/menonaktifkan dan menyusun ulang masing-masing modul, yang meliputi:
