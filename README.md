@@ -96,6 +96,13 @@ See [CONTRIBUTING](docs/CONTRIBUTING.md) for code or translation details and tip
 
 [![Weblate (translation details)](https://hosted.weblate.org/widgets/urlcheck/-/multi-auto.svg)](https://hosted.weblate.org/engage/urlcheck/)
 
+<a href="https://star-history.com/#TrianguloY/URLCheck&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=TrianguloY/URLCheck&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=TrianguloY/URLCheck&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=TrianguloY/URLCheck&type=Date" />
+ </picture>
+</a>
 
 <!-- ---------- License ---------- -->
 
