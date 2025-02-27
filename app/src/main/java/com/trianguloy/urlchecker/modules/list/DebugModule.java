@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.activities.ModulesActivity;
@@ -14,6 +15,7 @@ import com.trianguloy.urlchecker.dialogs.MainDialog;
 import com.trianguloy.urlchecker.modules.AModuleConfig;
 import com.trianguloy.urlchecker.modules.AModuleData;
 import com.trianguloy.urlchecker.modules.AModuleDialog;
+import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.services.CustomTabs;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
@@ -54,9 +56,22 @@ public class DebugModule extends AModuleData {
     public AModuleConfig getConfig(ModulesActivity cntx) {
         return new DebugConfig(cntx);
     }
+
+    @Override
+    public List<AutomationRules.Automation<AModuleDialog>> getAutomations() {
+        return (List<AutomationRules.Automation<AModuleDialog>>) (List<?>) DebugDialog.AUTOMATIONS;
+    }
 }
 
 class DebugDialog extends AModuleDialog {
+
+    static final List<AutomationRules.Automation<DebugDialog>> AUTOMATIONS = List.of(
+            new AutomationRules.Automation<>(
+                    "toast",
+                    R.string.auto_toast,
+                    ((t, args) -> Toast.makeText(t.getActivity(), args.optString("text"), Toast.LENGTH_SHORT).show())
+            )
+    );
 
     public static final String SEPARATOR = "";
     private TextView data;

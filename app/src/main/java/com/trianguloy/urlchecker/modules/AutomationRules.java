@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules;
 
+import static com.trianguloy.urlchecker.utilities.methods.JavaUtils.valueOrDefault;
+
 import android.app.Activity;
 import android.content.Context;
 
@@ -9,6 +11,8 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.generics.JsonCatalog;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.BiConsumer;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,11 +26,15 @@ public class AutomationRules extends JsonCatalog {
     /* ------------------- inner classes ------------------- */
 
     /** Represents an available automation */
-    public record Automation<T extends AModuleDialog>(String key, int description, JavaUtils.Consumer<T> action) {
+    public record Automation<T extends AModuleDialog>(
+            String key, int description, BiConsumer<T, JSONObject> action) {
+        public Automation(String key, int description, Consumer<T> action) {
+            this(key, description, (dialog, ignoredArgs) -> action.accept(dialog));
+        }
     }
 
     /** Represents an automation that matched a url */
-    public record MatchedAutomation(List<String> actions, boolean stop) {
+    public record MatchedAutomation(List<String> actions, boolean stop, JSONObject args) {
     }
 
     /* ------------------- static ------------------- */
@@ -95,7 +103,7 @@ public class AutomationRules extends JsonCatalog {
                 // add as matched
                 matches.add(new MatchedAutomation(
                         JavaUtils.parseArrayOrElement(automation.opt("action"), String.class),
-                        automation.optBoolean("stop")));
+                        automation.optBoolean("stop"), valueOrDefault(automation.optJSONObject("args"), new JSONObject())));
 
             } catch (Exception e) {
                 AndroidUtils.assertError("Invalid automation", e);

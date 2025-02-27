@@ -33,7 +33,10 @@ import com.trianguloy.urlchecker.utilities.AndroidSettings;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Animations;
 import com.trianguloy.urlchecker.utilities.methods.Inflater;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -61,7 +64,7 @@ public class MainDialog extends Activity {
     public final Map<String, String> globalData = new HashMap<>();
 
     /** Available automations */
-    private final Map<String, Runnable> automations = new ArrayMap<>();
+    private final Map<String, JavaUtils.Consumer<JSONObject>> automations = new ArrayMap<>();
 
     /** The current url */
     private UrlData urlData = new UrlData("");
@@ -159,7 +162,7 @@ public class MainDialog extends Activity {
                             }
                         } else {
                             try {
-                                action.run();
+                                action.accept(matchedAutomation.args());
                             } catch (Exception e) {
                                 AndroidUtils.assertError("Exception while running automation " + automationKey, e);
                             }
@@ -342,7 +345,7 @@ public class MainDialog extends Activity {
                     if (BuildConfig.DEBUG && automations.containsKey(automation.key())) {
                         AndroidUtils.assertError("There is already an automation with key " + automation.key() + "!");
                     }
-                    automations.put(automation.key(), () -> automation.action().accept(module));
+                    automations.put(automation.key(), args -> automation.action().accept(module, args));
                 }
             }
         } catch (Exception e) {

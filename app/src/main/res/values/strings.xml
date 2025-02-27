@@ -173,11 +173,12 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_error_toast">Show toast if automation fails</string>
     <string name="auto_notFound">"No automation with key '%s' is available. Make sure it is valid and the required module is active."</string>
     <string name="auto_editor">"Automations configuration. Format: list of objects where the key is a unique automation name and the content includes the following values:
-- 'regex': string|list, optional: if present, a valid java regex that the url must match for the automation to run. If list, at least one regex must match. If omitted, all urls will match.
-- 'referrer': string|list, optional: if present, the referrer (the app that opened the link) must exactly match this value. If list, the referrer must be one of the values. If omitted, all urls will match. You can use the debug module to check the actual value.
+- 'regex': string|list: if present, a valid java regex that the url must match for the automation to run. If list, at least one regex must match. If omitted, all urls will match.
+- 'referrer': string|list: if present, the referrer (the app that opened the link) must exactly match this value. If list, the referrer must be one of the values. If omitted, all urls will match. You can use the debug module to check the actual value.
 - 'action': string|list, required: the key of the automation to run. If multiple they will run in order. Check below for a list of all the available keys.
+- 'args', object: values that the action may require, see the description of each action for the values they accept.
 - 'stop': boolean: if true, no more automations will run for the current url. False by default.
-- 'enabled': boolean, optional: if false this automation will be skipped. True by default."</string>
+- 'enabled': boolean: if false this automation will be skipped. True by default."</string>
     <string name="auto_available_prefix">Available automation actions (keys):</string>
     <string name="auto_available_disabled">"This module is disabled, automations won't run"</string>
     <string name="auto_rule_bitly">Unshort bit.ly</string>
@@ -193,6 +194,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_scan">"Will scan the url. Equivalent of pressing the 'Scan' button."</string>
     <string name="auto_clear">"Will clear the url. Equivalent of pressing the 'Clear' button. Note that the module itself contains an auto setting that will also clear all urls more efficiently, and should be preferred."</string>
     <string name="auto_drawer">"Will open the drawer. Equivalent of pressing the drawer button if collapsed."</string>
+    <string name="auto_toast">Display a toast with a fixed text. The text must be provided as an argument named \'text\'.</string>
     <!--
         modules
     -->

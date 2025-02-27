@@ -170,6 +170,12 @@ public interface JavaUtils {
         void accept(T t);
     }
 
+    /** java.util.function.BiConsumer requires api 24 */
+    @FunctionalInterface
+    interface BiConsumer<T, U> {
+        void accept(T t, U u);
+    }
+
     /** java.util.function.Supplier requires api 24 */
     @FunctionalInterface
     interface Supplier<T> {
