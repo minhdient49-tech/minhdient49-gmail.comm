@@ -101,6 +101,10 @@
             android:id="@+id/animations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/smallPadding"
+            android:paddingLeft="@dimen/smallPadding"
+            android:paddingEnd="@dimen/smallPadding"
+            android:paddingRight="@dimen/smallPadding"
             android:text="@string/txt_animation" />
 
         <FrameLayout
