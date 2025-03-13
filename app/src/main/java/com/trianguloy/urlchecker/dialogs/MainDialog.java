@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.dialogs;
 
+import static com.trianguloy.urlchecker.activities.SettingsActivity.WIDTH_PREF;
+
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
@@ -224,6 +226,9 @@ public class MainDialog extends Activity {
         ll_main = findViewById(R.id.main);
         ll_drawer = findViewById(R.id.drawer);
         ll_drawer.setVisibility(View.GONE);
+
+        // set width
+        AndroidUtils.setActivityWidth(WIDTH_PREF(this).get(), this);
 
         // load helpers
         automationRules = new AutomationRules(this);

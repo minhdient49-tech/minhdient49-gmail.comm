@@ -51,6 +51,9 @@ Traducciones: %2$s."</string>
     <string name="txt_theme">Tema:</string>
     <string name="spin_darkTheme">Oscuro</string>
     <string name="spin_lightTheme">Claro</string>
+    <string name="txt_width">Ancho del cuadro de diálogo:\n¡Cuidado! Valores pequeños podrían ocultar elementos de la pantalla.</string>
+    <string name="spin_fullWidth">Completo</string>
+    <string name="spin_dynamicWidth">Dinámico</string>
     <string name="txt_locale">Idioma:</string>
     <string name="txt_animation">Activar animaciones</string>
     <!--

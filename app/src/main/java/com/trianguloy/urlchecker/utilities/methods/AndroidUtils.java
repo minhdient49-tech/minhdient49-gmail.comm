@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.text.style.ClickableSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
@@ -272,5 +273,22 @@ public interface AndroidUtils {
                 view.setLayoutParams(new LinearLayout.LayoutParams(view.getWidth(), childHeight));
             }
         });
+    }
+
+    /**
+     * Sets the width of an activity.
+     * width must be either a percentage (>=0) or a special layout value (<0)
+     */
+    static void setActivityWidth(int width, Activity cntx) {
+        var params = cntx.getWindow().getAttributes();
+
+        if (width < 0) {
+            params.width = width;
+        } else {
+            var metrics = new DisplayMetrics();
+            cntx.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+            params.width = metrics.widthPixels * width / 100;
+        }
+        cntx.getWindow().setAttributes(params);
     }
 }
