@@ -89,7 +89,7 @@ public class SettingsActivity extends Activity {
         );
 
         // init width seekBar
-        // 0      <-> wrap content
+        // 0      <-> WRAP_CONTENT
         // [1,99] <-> [1,99]
         // 100    <-> MATCH_PARENT
         WIDTH_PREF(this).attachToSeekBar(findViewById(R.id.width_value), findViewById(R.id.width_label),
