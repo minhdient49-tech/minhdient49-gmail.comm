@@ -16,14 +16,13 @@ import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
  */
 public class CTabs {
 
-    /**
-     * Ctabs extra intent
-     */
+    /** Ctabs extra intent */
     private static final String EXTRA = "android.support.customtabs.extra.SESSION";
 
-    /**
-     * CTabs preference
-     */
+    /** Ctabs opt_out extra intent */
+    private static final String EXTRA_OPTOUT = "android.support.customtabs.extra.user_opt_out";
+
+    /** CTabs preference */
     public static GenericPref.Enumeration<OnOffConfig> PREF(Context cntx) {
         return new GenericPref.Enumeration<>("open_ctabs", OnOffConfig.AUTO, OnOffConfig.class, cntx);
     }
@@ -39,9 +38,7 @@ public class CTabs {
         pref = PREF(cntx);
     }
 
-    /**
-     * Initialization from a given intent and a button to toggle
-     */
+    /** Initialization from a given intent and a button to toggle */
     public void initFrom(Intent intent, ImageButton button) {
         this.button = button;
         boolean visible;
@@ -94,9 +91,7 @@ public class CTabs {
         button.setImageResource(state ? R.drawable.ctabs_on : R.drawable.ctabs_off);
     }
 
-    /**
-     * applies the setting to a given intent
-     */
+    /** applies the setting to a given intent */
     public void apply(Intent intent) {
         if (state && !intent.hasExtra(CTabs.EXTRA)) {
             // enable Custom tabs
@@ -108,6 +103,11 @@ public class CTabs {
         if (!state && intent.hasExtra(CTabs.EXTRA)) {
             // disable Custom tabs
             intent.removeExtra(CTabs.EXTRA);
+        }
+
+        if (state && intent.hasExtra(EXTRA_OPTOUT)) {
+            // explicitly remove the application opt_out request if the user do want to enable custom tabs
+            intent.removeExtra(EXTRA_OPTOUT);
         }
     }
 }
