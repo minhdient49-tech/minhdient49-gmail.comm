@@ -216,7 +216,7 @@
     <string name="mPttrn_ok">Nisu pronađeni podudarajaući šabloni</string>
     <string name="mPttrn_editor">Ovde možete urediti ili dodati novi obrazac. Format:
 \n- \'encode\': boolean: podesite na tačno da biste kodirali URL pre provere redovnog izraza.
-\n- \'regex\': string, obavezan: važeći java regularni izraz sa kojim URL mora da odgovara, inače se šablon preskače.
+\n- \'regex\': string: važeći java regularni izraz sa kojim URL mora da odgovara, inače se šablon preskače.
 \n- \'ekcludeRegex\': string: ako je naveden, važeći java regularni izraz sa kojim se URL ne sme podudarati, inače se šablon preskače.
 \n- \'replacement\': string|list: ako je navedeno, dugme \'fix\' će pokrenuti \'url=url.replaceAll(regex,replacement)\'. Ako je lista, zamena će biti nasumični element iz njega.
 \n- \'decode\': boolean: postaviti na tačno da bi se dekodirao zamenjeni URL.

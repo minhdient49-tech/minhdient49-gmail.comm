@@ -231,7 +231,7 @@
 \n- enabled: Se falso, todo o objeto será ignorado. Verdadeiro por padrão.</string>
     <string name="mPttrn_editor">Aqui você pode editar ou adicionar novos padrões. Formato:
 \n- \'encode\': booleano: defina como true para codificar a URL antes de checar o regex.
-\n- \'regex\': string, requerido: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado.
+\n- \'regex\': string: regex java válido que a URL deve corresponder; caso contrário, o padrão é ignorado.
 \n- \'excludeRegex\': string: (opcional) um regex java válido que a URL não deve corresponder; caso contrário, o padrão é ignorado.
 \n- \'replacement\': string|lista: se fornecido, o botão \'corrigir\' executará \'url=url.replaceAll(regex,replacement)\'. Em uma lista, um elemento aleatório é escolhido.
 \n- \'decode\': booleano: defina como true para decodificar a URL substítuida.

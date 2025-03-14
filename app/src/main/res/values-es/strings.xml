@@ -156,7 +156,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mPttrn_ok">No hay patrones coincidentes</string>
     <string name="mPttrn_editor">Aquí puedes editar o agregar un nuevo patrón. Formato:
 \n- \'encode\': boolean: establecido en verdadero para codificar la url antes de verificar la expresión regular.
-\n- \'regex\': string, requerida: una expresión regular de Java válida que la URL debe coincidir; de lo contrario, se omite el patrón.
+\n- \'regex\': string: una expresión regular de Java válida que la URL debe coincidir; de lo contrario, se omite el patrón. Si no se proporciona, la url completa coincidirá.
 \n- \'excludeRegex\': string: si se proporciona, una expresión regular de Java válida y que la URL no debe coincidir; de lo contrario, se omite el patrón.
 \n- \'replacement\': string|list: si se proporciona, el botón \'fix\' ejecutará la \'url=url.replaceAll(regex,replacement)\'. Si está en la lista, el reemplazo será un elemento aleatorio de la misma.
 \n- \'decode\': boolean: establecido en verdadero para decodificar la url reemplazada.

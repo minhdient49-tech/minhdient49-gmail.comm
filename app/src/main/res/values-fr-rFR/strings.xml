@@ -121,7 +121,7 @@ Ceci est le didacticiel, si vous souhaitez l'ignorer vous pouvez le faire en uti
     <string name="mPttrn_ok">Aucun modèle correspondant</string>
     <string name="mPttrn_editor">Ici, vous pouvez modifier ou ajouter un nouveau modèle. Format :
 \n- \'encode\': booléen: mettre à true pour encoder l\'url avant de vérifier la regex.
-\n- \'regex\': chaîne de caractères, obligatoire : une regex Java valide à laquelle l\'url doit correspondre, sinon le motif est ignoré.
+\n- \'regex\': chaîne de caractères : une regex Java valide à laquelle l\'url doit correspondre, sinon le motif est ignoré.
 \n- \'excludeRegex\': chaîne de caractères: si fournie, une regex Java valide que l\'url ne doit pas correspondre, sinon le motif est ignoré.
 \n- \'replacement\': string|list: si fourni, le bouton \'fix\' lancera \'url=url.replaceAll(regex,replacement)\'. S\'il s\'agit d\'une liste, le remplacement sera un élément aléatoire de cette liste.
 \n- decode\': booléen: mettre à true pour décoder l\'url remplacée.

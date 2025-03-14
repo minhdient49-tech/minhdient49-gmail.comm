@@ -209,7 +209,7 @@
     <string name="mLog_desc">Diese Modul speichert alle geprüften URLs. Sie können hier das gesamte Protokoll ansehen, bearbeiten und leeren. Es gibt keine visuelle Anzeige im Hauptdialog. Um das Protokoll abzuschalten, deaktivieren Sie einfach dieses Modul.</string>
     <string name="mPttrn_editor">Hier können Sie Muster hinzufügen oder editieren. Format:
 \n- \'encode\': boolean: Wahr, um das Muster auf die encodierte URL anzuwenden.
-\n- \'regex\': string, notwendig: Ein valider Java RegEx, der passen muss; sonst wird das Muster übersprungen.
+\n- \'regex\': string: Ein valider Java RegEx, der passen muss; sonst wird das Muster übersprungen.
 \n- \'excludeRegex\': string: (optional) Ein valider Java RegEx, der nicht passen darf; sonst wird das Muster übersprungen.
 \n- \'replacement\': string|list: (optional) Der Anwenden-Button wird \'url=url.replaceAll(regex,replacement)\' ausführen. Bei einer Liste wird ein Element zufällig gewählt.
 \n- \'decode\': boolean: Wahr, um die URL nach Ersetzung zu decodieren.

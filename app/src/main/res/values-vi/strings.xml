@@ -114,7 +114,7 @@
     <string name="mHist_desc">Khi URL được chỉnh sửa theo cách thủ công hoặc bằng các mô-đun khác, URL này cho phép bạn xem và hoàn nguyên các thay đổi.</string>
     <string name="mPttrn_editor">Tại đây bạn có thể chỉnh sửa hoặc thêm mẫu mới. Định dạng:
 \n- \'encode\': boolean: đặt thành true để mã hóa url trước khi kiểm tra biểu thức chính quy.
-\n- \'regex\': chuỗi, bắt buộc: một biểu thức chính quy java hợp lệ mà url phải khớp, nếu không mẫu sẽ bị bỏ qua.
+\n- \'regex\': chuỗi: một biểu thức chính quy java hợp lệ mà url phải khớp, nếu không mẫu sẽ bị bỏ qua.
 \n- \'excludeRegex\': string: nếu được cung cấp, một biểu thức chính quy java hợp lệ mà url không được khớp, nếu không mẫu sẽ bị bỏ qua.
 \n- \'replacement\': string|list: nếu được cung cấp, nút \'sửa\' sẽ chạy \'url=url.replaceAll(regex,replacement)\'. Nếu có danh sách, sự thay thế sẽ là một phần tử ngẫu nhiên từ nó.
 \n- \'decode\': boolean: đặt thành true để giải mã url được thay thế.

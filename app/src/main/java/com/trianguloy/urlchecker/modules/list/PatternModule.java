@@ -22,7 +22,6 @@ import com.trianguloy.urlchecker.utilities.wrappers.RegexFix;
 
 import org.json.JSONArray;
 
-import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -127,9 +126,6 @@ class PatternDialog extends AModuleDialog {
                 if (data == null) continue;
                 if (!data.optBoolean("enabled", true)) continue;
 
-                // get regex (must exists)
-                if (!data.has("regex")) continue;
-
                 // encode if required
                 if (data.optBoolean("encode")) {
                     url = URLEncoder.encode(url);
@@ -138,7 +134,7 @@ class PatternDialog extends AModuleDialog {
                 // check matches
                 // if 'regex' matches, the pattern can match
                 // if 'regex' doesn't match, the patter doesn't match
-                var regex_matcher = Pattern.compile(data.getString("regex")).matcher(url);
+                var regex_matcher = Pattern.compile(data.optString("regex", "^.*$")).matcher(url);
                 var matches = regex_matcher.find();
                 if (matches && data.has("excludeRegex")) {
                     // if 'excludeRegex' doesn't exist, the pattern can match

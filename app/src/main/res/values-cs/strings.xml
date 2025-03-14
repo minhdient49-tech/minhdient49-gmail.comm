@@ -113,7 +113,7 @@
 \nTento modul byl zastaralý ve prospěch modulu \'Uri parts\'</string>
     <string name="mPttrn_editor">Zde můžete upravit nebo přidat nový vzor. Formát:
 \n- \'encode\': boolean: Nastavte hodnotu true pro zakódování URL před kontrolou regulárních výrazů (regex).
-\n- \'regex\': řetězec, povinné: platný java regex, kterému musí url odpovídat – jinak bude vzor přeskočen.
+\n- \'regex\': řetězec: platný java regex, kterému musí url odpovídat – jinak bude vzor přeskočen.
 \n- \'excludeRegex\': řetězec: je-li zadán, platný java regex, kterému url nesmí odpovídat – jinak je vzor přeskočen.
 \n- \'replacement\': řetězec|seznam: je-li zadáno, tlačítko \'fix\' spustí \'url=url.replaceAll(regex,replacement)\'. Pokud je uveden seznam, bude náhradou náhodný prvek z něj.
 \n- \'decode\': boolean: nastavte na true pro dekódování nahrazené url.
