@@ -330,7 +330,7 @@
     <string name="auto_unshort">Ent-Kürzen starten.</string>
     <string name="auto_scan">URL scannen, entspricht dem Scannen-Button.</string>
     <string name="auto_drawer">Überhangmenü öffnen.</string>
-    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string|list, notwendig: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird. Bei einer Liste muss mind. ein RegEx passen.\n- \'action\': string, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'enabled\': boolean, optional: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
+    <string name="auto_editor">Konfiguration der Automatisierungen. Format: Liste von Objekten, bei denen der Schlüssel der eindeutige Name der Automatisierung ist. Der Inhalt umfasst die folgenden Werte:\n- \'regex\': string|list, notwendig: Ein valider Java RegEx, der passen muss, damit die Automatisierung ausgeführt wird. Bei einer Liste muss mind. ein RegEx passen.\n- \'action\': string|list, notwendig: Der Schlüssel der auszuführenden Automatisierung. Die unten stehende Liste enthält mögliche Schlüssel.\n- \'enabled\': boolean, optional: Wenn falsch wird diese Automatisierung übersprungen. Standardmäßig wahr.</string>
     <string name="format">Formatieren</string>
     <string name="discard">Verwerfen</string>
     <string name="json_info">Erklärung anzeigen</string>

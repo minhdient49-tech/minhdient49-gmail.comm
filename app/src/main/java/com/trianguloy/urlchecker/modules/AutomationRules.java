@@ -97,8 +97,8 @@ public class AutomationRules extends JsonCatalog {
                     }
                 }
 
-                // add as match
-                matches.add(automation.getString("action"));
+                // add as matched
+                matches.addAll(JavaUtils.getArrayOrElement(automation.get("action"), String.class));
 
             } catch (Exception e) {
                 AndroidUtils.assertError("Invalid automation", e);

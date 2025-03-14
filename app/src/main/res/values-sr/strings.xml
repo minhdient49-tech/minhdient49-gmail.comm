@@ -333,7 +333,7 @@
     <string name="mWebhook_templates">Šabloni</string>
     <string name="mWebhook_test">Testiraj webhook</string>
     <string name="auto_close">Zatvoriće aplikaciju, ne radeći ništa drugo.</string>
-    <string name="auto_editor">Konfiguracija automatizacije. Format: lista objekata gde je ključ jedinstveno ime automatizacije, a sadržaj sadrži sledeće vrednosti:\n- \'regek\': string|list, obavezno: važeći java regularni izraz koji url mora da odgovara da bi se automatizacija pokrenula. Ako je lista, najmanje jedan regularni izraz mora da se podudara.\n- \'action\': string, potrebno: ključ automatizacije za pokretanje. U nastavku pogledajte listu svih dostupnih ključeva.\n- \'enabled\': boolean, opciono: ako je netačno, ova automatizacija će biti preskočena. Podrazumevano tačno.</string>
+    <string name="auto_editor">Konfiguracija automatizacije. Format: lista objekata gde je ključ jedinstveno ime automatizacije, a sadržaj sadrži sledeće vrednosti:\n- \'regex\': string|list, obavezno: važeći java regularni izraz koji url mora da odgovara da bi se automatizacija pokrenula. Ako je lista, najmanje jedan regularni izraz mora da se podudara.\n- \'action\': string|list, potrebno: ključ automatizacije za pokretanje. U nastavku pogledajte listu svih dostupnih ključeva.\n- \'enabled\': boolean, opciono: ako je netačno, ova automatizacija će biti preskočena. Podrazumevano tačno.</string>
     <string name="auto_clear">Očistiće URL. Ekvivalentno pritisku na dugme \'Obriši\'. Imajte na umu da sam modul sadrži automatsku postavku koja će takođe efikasnije obrisati sve URL-ove i trebalo bi da bude poželjna.</string>
     <string name="mWebhook_body_hint">Webhook tijelo</string>
     <string name="mWebhook_auto">Automatski pošalji URL-ove</string>
