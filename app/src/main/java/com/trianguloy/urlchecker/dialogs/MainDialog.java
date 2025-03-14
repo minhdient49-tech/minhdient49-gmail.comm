@@ -162,6 +162,7 @@ public class MainDialog extends Activity {
             }
 
             // fifth run automations
+            // bug: you can't run automations that modify the url, maybe it's time to implement a proper url queue
             if (automationRules.automationsEnabledPref.get()) {
                 for (var automationKey : automationRules.check(urlData, this)) {
                     var action = automations.get(automationKey);

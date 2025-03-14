@@ -109,7 +109,8 @@ class ClearUrlConfig extends AModuleConfig {
 class ClearUrlDialog extends AModuleDialog {
 
     static final List<AutomationRules.Automation<ClearUrlDialog>> AUTOMATIONS = List.of(
-            new AutomationRules.Automation<>("clear", R.string.auto_clear, ClearUrlDialog::clear)
+            // this automation doesn't work yet, as it runs the onNewUrl inside the main loop
+//            new AutomationRules.Automation<>("clear", R.string.auto_clear, ClearUrlDialog::clear)
     );
 
     public static final String CLEARED = "clearUrl.cleared";
