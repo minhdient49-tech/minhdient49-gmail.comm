@@ -56,6 +56,7 @@ Translations: %2$s."</string>
     <string name="spin_dynamicWidth">Dynamic</string>
     <string name="txt_locale">Locale:</string>
     <string name="txt_animation">Enable animations</string>
+    <string name="txt_processText">Sync url with editable text (when the app is opened by long tapping text on an input textbox)</string>
     <string name="btn_tutorialSettings">Repeat tutorial</string>
     <string name="btn_backupRestore">Backup / Restore</string>
     <!--

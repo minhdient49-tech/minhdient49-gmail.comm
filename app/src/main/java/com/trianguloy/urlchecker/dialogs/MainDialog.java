@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.dialogs;
 
+import static com.trianguloy.urlchecker.activities.SettingsActivity.SYNC_PROCESSTEXT_PREF;
 import static com.trianguloy.urlchecker.activities.SettingsActivity.WIDTH_PREF;
 
 import android.animation.ObjectAnimator;
@@ -7,6 +8,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.view.View;
@@ -181,6 +183,13 @@ public class MainDialog extends Activity {
             }
 
             break;
+        }
+
+        // if in text_process mode, update text unless disabled
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                && SYNC_PROCESSTEXT_PREF(this).get()
+                && !getIntent().getBooleanExtra(Intent.EXTRA_PROCESS_TEXT_READONLY, true)) {
+            setResult(RESULT_OK, new Intent().putExtra(Intent.EXTRA_PROCESS_TEXT, urlData.url));
         }
 
         // end, reset
@@ -381,6 +390,10 @@ public class MainDialog extends Activity {
             var links = AndroidUtils.getLinksFromText(sharedText);
             if (links.isEmpty()) links.add(sharedText.trim()); // no links? just use the whole text, the user requested the app so...
             return links;
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Intent.ACTION_PROCESS_TEXT.equals(action)) {
+            // process text
+            var text = getIntent().getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
+            return text == null ? Collections.emptySet() : Set.of(text.toString());
         } else {
             // other, check data
             var uri = intent.getData();

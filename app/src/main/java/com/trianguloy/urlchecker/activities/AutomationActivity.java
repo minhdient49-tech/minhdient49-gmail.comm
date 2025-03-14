@@ -37,9 +37,7 @@ public class AutomationActivity extends Activity {
         // smaller easter egg
         findViewById(R.id.icon).setOnClickListener(icon -> {
             var anim = ValueAnimator.ofFloat(0, 360);
-            anim.addUpdateListener(valueAnimator -> {
-                icon.setRotation((float) valueAnimator.getAnimatedValue());
-            });
+            anim.addUpdateListener(valueAnimator -> icon.setRotation((float) valueAnimator.getAnimatedValue()));
             anim.setInterpolator(new AnticipateOvershootInterpolator());
             anim.setDuration(1000);
             anim.start();

@@ -56,6 +56,7 @@ Traducciones: %2$s."</string>
     <string name="spin_dynamicWidth">Dinámico</string>
     <string name="txt_locale">Idioma:</string>
     <string name="txt_animation">Activar animaciones</string>
+    <string name="txt_processText">Sincronizar url con texto editable (cuando la app se abre al mantener pulsado texto en un cuadro de entrada)</string>
     <!--
         generic
     -->

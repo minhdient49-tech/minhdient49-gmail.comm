@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.MenuItem;
@@ -34,6 +35,11 @@ public class SettingsActivity extends Activity {
         return new GenericPref.Int("width", WindowManager.LayoutParams.WRAP_CONTENT, cntx);
     }
 
+    /** The sync process-text pref */
+    public static GenericPref.Bool SYNC_PROCESSTEXT_PREF(Context cntx) {
+        return new GenericPref.Bool("syncProcessText", true, cntx);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,12 @@ public class SettingsActivity extends Activity {
         configureTheme();
         configureLocale();
         Animations.ANIMATIONS(this).attachToSwitch(findViewById(R.id.animations));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            SYNC_PROCESSTEXT_PREF(this).attachToSwitch(findViewById(R.id.processText));
+        } else {
+            findViewById(R.id.processText).setVisibility(View.GONE);
+        }
 
         // if this was reloaded, some settings may have change, so reload previous one too
         if (AndroidSettings.wasReloaded(this)) AndroidSettings.markForReloading(this);
