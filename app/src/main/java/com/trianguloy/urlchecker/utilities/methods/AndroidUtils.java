@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
@@ -140,11 +141,27 @@ public interface AndroidUtils {
     static String getReferrer(Activity activity) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP_MR1) return null;
 
-        Uri referrer = activity.getReferrer();
-        if (referrer == null) return null;
+        // apps can 'fake' the referrer with these two extras. So remove them first, and restore them later
+        var intent = activity.getIntent();
+        Uri extraReferrer = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            try {
+                extraReferrer = intent.getParcelableExtra(Intent.EXTRA_REFERRER, Uri.class);
+                intent.removeExtra(Intent.EXTRA_REFERRER);
+            } catch (Exception ignored) {
+            }
+        }
+        var extraReferrerName = intent.getStringExtra(Intent.EXTRA_REFERRER_NAME);
+        intent.removeExtra(Intent.EXTRA_REFERRER_NAME);
 
-        // the scheme must be "android-app"
-        if (!"android-app".equals(referrer.getScheme())) return null;
+        var referrer = activity.getReferrer();
+
+        if (extraReferrer != null) intent.putExtra(Intent.EXTRA_REFERRER, extraReferrer);
+        if (extraReferrerName != null) intent.putExtra(Intent.EXTRA_REFERRER_NAME, extraReferrerName);
+
+
+        // the scheme must exist and be "android-app"
+        if (referrer == null || !"android-app".equals(referrer.getScheme())) return null;
         // the host is the package
         return referrer.getHost();
     }

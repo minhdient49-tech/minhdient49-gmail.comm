@@ -100,10 +100,8 @@ public class AutomationRules extends JsonCatalog {
                 // add as match
                 matches.add(automation.getString("action"));
 
-            } catch (JSONException e) {
-                AndroidUtils.assertError("Invalid automation rule", e);
-            } catch (ClassCastException e) {
-                AndroidUtils.assertError("Invalid automation regex", e);
+            } catch (Exception e) {
+                AndroidUtils.assertError("Invalid automation", e);
             }
         }
         return matches;
