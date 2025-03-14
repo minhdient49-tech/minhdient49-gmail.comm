@@ -163,7 +163,7 @@ public class MainDialog extends Activity {
 
             // fifth run automations
             if (automationRules.automationsEnabledPref.get()) {
-                for (var automationKey : automationRules.check(urlData)) {
+                for (var automationKey : automationRules.check(urlData, this)) {
                     var action = automations.get(automationKey);
                     if (action == null) {
                         if (automationRules.automationsShowErrorToast.get()) {

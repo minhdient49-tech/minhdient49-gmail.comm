@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /** The automation rules, plus some automation related things (maybe consider splitting into other classes) */
 public class AutomationRules extends JsonCatalog {
@@ -68,7 +69,7 @@ public class AutomationRules extends JsonCatalog {
     }
 
     /** Returns the automation ids that match a specific [urlData] */
-    public List<String> check(UrlData urlData) {
+    public List<String> check(UrlData urlData, Activity cntx) {
         var matches = new ArrayList<String>();
 
         var catalog = getCatalog();
@@ -77,12 +78,27 @@ public class AutomationRules extends JsonCatalog {
                 var automation = catalog.getJSONObject(key);
                 if (!automation.optBoolean("enabled", true)) continue;
 
-                for (String pattern : JavaUtils.getArrayOrElement(automation.get("regex"), String.class)){
-                    if (urlData.url.matches(pattern)) {
-                        matches.add(automation.getString("action"));
+                // match referrer
+                if (automation.has("referrer") && !Objects.equals(automation.getString("referrer"), AndroidUtils.getReferrer(cntx))) {
+                    break;
+                }
+
+                // match at least one regex, if any
+                if (automation.has("regex")) {
+                    var anyMatch = false;
+                    for (var pattern : JavaUtils.getArrayOrElement(automation.get("regex"), String.class)) {
+                        if (urlData.url.matches(pattern)) {
+                            anyMatch = true;
+                            break;
+                        }
+                    }
+                    if (!anyMatch) {
                         break;
                     }
                 }
+
+                // add as match
+                matches.add(automation.getString("action"));
 
             } catch (JSONException e) {
                 AndroidUtils.assertError("Invalid automation rule", e);
