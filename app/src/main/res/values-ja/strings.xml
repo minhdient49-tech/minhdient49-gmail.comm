@@ -73,12 +73,7 @@
     <string name="mPttrn_noSchemeHttp">HTTPスキームがありません。</string>
     <string name="mPttrn_noSchemeHttps">HTTPSスキームがありません。</string>
     <string name="mPttrn_ok">問題は見つかりませんでした。</string>
-    <string name="mPttrn_editor">"ここでは、パターンの編集をしたり、新しいパターンを追加したりできます。\n利用できるフォーマットは以下です:
-- 'regex': 文字列: Java の正規表現。URLに対して照合されます。
-- 'replacement': 文字列またはリスト: 指定すると、「適用」 ボタンをタップした時に、'url=url.replaceAll(regex,replacement)' が実行されます。
-- 'automatic': ブール値: true に設定すると、パターンが自動的に適用されます。
-- 'enabled': ブール値: パターンを無効にするには false に設定します。
-注: パターンを編集した場合、アプリの更新による新しい組み込みパターンは自動的に追加されません (リセットオプションで復元できます)。"</string>
+    <string name="mPttrn_editor">ここでは、パターンの編集をしたり、新しいパターンを追加したりできます。\n利用できるフォーマットは以下です:\n- \'regex\': 文字列: Java の正規表現。URLに対して照合されます。\n- \'replacement\': 文字列またはリスト: 指定すると、「適用」 ボタンをタップした時に、\'url=url.replaceAll(regex,replacement)\' が実行されます。\n- \'automatic\': ブール値: true に設定すると、パターンが自動的に適用されます。\n- \'enabled\': ブール値: パターンを無効にするには false に設定します。\n注: パターンを編集した場合、アプリの更新による新しい組み込みパターンは自動的に追加されません (リセットオプションで復元できます)。</string>
     <string name="mOpen_name"><![CDATA[開く・共有する]]></string>
     <string name="mOpen_desc">"次のボタンが含まれています (左から右へ):
 - 「カスタムタブ」ボタン: カスタムタブ機能を有効化/無効化します。有効にすると、ブラウザは「ライト」モードで開かれます。
