@@ -176,6 +176,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
 - 'regex': string|list: a valid java regex that the url must match for the automation to run. If list, at least one regex must match. If omitted, all urls will match.
 - 'referrer': string, optional: if present, the referrer (the app that opened the link) must exactly match this value. You can use the debug module to check the actual value.
 - 'action': string|list, required: the key of the automation to run. If multiple they will run in order. Check below for a list of all the available keys.
+- 'stop': boolean: if true, no more automations will run for the current url. False by default.
 - 'enabled': boolean, optional: if false this automation will be skipped. True by default."</string>
     <string name="auto_available_prefix">Available automation actions (keys):</string>
     <string name="auto_available_disabled">"This module is disabled, automations won't run"</string>

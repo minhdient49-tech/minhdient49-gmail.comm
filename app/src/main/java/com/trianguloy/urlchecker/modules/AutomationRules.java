@@ -26,6 +26,10 @@ public class AutomationRules extends JsonCatalog {
     public record Automation<T extends AModuleDialog>(String key, int description, JavaUtils.Consumer<T> action) {
     }
 
+    /** Represents an automation that matched a url */
+    public record MatchedAutomation(List<String> actions, boolean stop) {
+    }
+
     /* ------------------- static ------------------- */
 
     /** Preference: automations availability */
@@ -68,9 +72,9 @@ public class AutomationRules extends JsonCatalog {
                 ;
     }
 
-    /** Returns the automation ids that match a specific [urlData] */
-    public List<String> check(UrlData urlData, Activity cntx) {
-        var matches = new ArrayList<String>();
+    /** Returns the automations that matched a specific [urlData] */
+    public List<MatchedAutomation> check(UrlData urlData, Activity cntx) {
+        var matches = new ArrayList<MatchedAutomation>();
 
         var catalog = getCatalog();
         for (var key : JavaUtils.toList(catalog.keys())) {
@@ -98,7 +102,9 @@ public class AutomationRules extends JsonCatalog {
                 }
 
                 // add as matched
-                matches.addAll(JavaUtils.getArrayOrElement(automation.get("action"), String.class));
+                matches.add(new MatchedAutomation(
+                        JavaUtils.getArrayOrElement(automation.get("action"), String.class),
+                        automation.optBoolean("stop")));
 
             } catch (Exception e) {
                 AndroidUtils.assertError("Invalid automation", e);

@@ -166,18 +166,23 @@ public class MainDialog extends Activity {
             // fifth run automations
             // bug: you can't run automations that modify the url, maybe it's time to implement a proper url queue
             if (automationRules.automationsEnabledPref.get()) {
-                for (var automationKey : automationRules.check(urlData, this)) {
-                    var action = automations.get(automationKey);
-                    if (action == null) {
-                        if (automationRules.automationsShowErrorToast.get()) {
-                            Toast.makeText(this, getString(R.string.auto_notFound, automationKey), Toast.LENGTH_LONG).show();
+                for (var matchedAutomation : automationRules.check(urlData, this)) {
+                    for (var automationKey : matchedAutomation.actions()) {
+                        var action = automations.get(automationKey);
+                        if (action == null) {
+                            if (automationRules.automationsShowErrorToast.get()) {
+                                Toast.makeText(this, getString(R.string.auto_notFound, automationKey), Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            try {
+                                action.run();
+                            } catch (Exception e) {
+                                AndroidUtils.assertError("Exception while running automation " + automationKey, e);
+                            }
                         }
-                    } else {
-                        try {
-                            action.run();
-                        } catch (Exception e) {
-                            AndroidUtils.assertError("Exception while running automation " + automationKey, e);
-                        }
+                    }
+                    if (matchedAutomation.stop()) {
+                        break;
                     }
                 }
             }
