@@ -10,7 +10,7 @@
         Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
     <string name="locale">עברית</string>
     <!-- main -->
-    <string name="txt_info">אפליקציה זו פועלת כצעד ביניים לקראת פתיחת קישורי url. כאשר תלחץ על קישור ובחר באפליקציה זו כדי לפתוח אותה, היא תציג תיבת דו-שיח עם מידע על הקישור. לחץ על לחצן המודול למטה כדי לבדוק ולהגדיר את כל המודולים הזמינים.</string>
+    <string name="txt_info">אפליקציה זו פועלת כצעד ביניים לפני פתיחת קישורים כאשר תלחץ על קישור בחר באפליקציה זו כדי לפתוח אותו, האפליקציה תציג תיבת דו-שיח עם מידע על הקישור. לחץ על לחצן המודול למטה כדי לבדוק ולהגדיר את כל המודולים הזמינים.</string>
     <string name="txt_sample">לחץ על הקישור למטה כדי לבדוק את זה:</string>
     <string name="a_modules">מודולים</string>
     <string name="a_about">על אודות</string>
