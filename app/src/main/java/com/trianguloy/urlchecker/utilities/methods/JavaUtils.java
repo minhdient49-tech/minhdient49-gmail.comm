@@ -33,7 +33,20 @@ public interface JavaUtils {
         return result;
     }
 
-    /**Converts a string into a json object, returns empty on failure */
+    /**
+     * Returns true iff none of the elements fulfill the check.
+     * Returns ifEmpty if the list is empty.
+     */
+    static <T> boolean noneMatch(List<T> list, Function<T, Boolean> check, boolean ifEmpty) {
+        if (list.isEmpty()) return ifEmpty;
+
+        for (var element : list) {
+            if (check.apply(element)) return false;
+        }
+        return true;
+    }
+
+    /** Converts a string into a json object, returns empty on failure */
     static JSONObject toJson(String content) {
         try {
             return new JSONObject(content);
@@ -50,17 +63,17 @@ public interface JavaUtils {
      *
      * @throws ClassCastException if the values are not from type {@code T}
      */
-    static <T> List<T> getArrayOrElement(Object object, Class<T> clazz) throws ClassCastException, JSONException {
-        List<T> result = new ArrayList<T>();
+    static <T> List<T> parseArrayOrElement(Object object, Class<T> className) throws ClassCastException, JSONException {
+        var result = new ArrayList<T>();
 
         if (object instanceof JSONArray array) {
             // List
             for (int i = 0; i < array.length(); i++) {
-                result.add(getAsOrCrash(array.get(i), clazz));
+                result.add(getAsOrCrash(array.get(i), className));
             }
-        } else {
+        } else if (object != null) {
             // Value
-            result.add(getAsOrCrash(object, clazz));
+            result.add(getAsOrCrash(object, className));
         }
 
         return result;
@@ -68,16 +81,17 @@ public interface JavaUtils {
 
     // I don't like it but it wasn't throwing an exception when wrongly casting,
     // probably due to type casting
+
     /**
      * Returns the value as type {@code T} if possible, if not, it throws an exception
      *
      * @throws ClassCastException if the values are not from type {@code T}
      */
-    static <T> T getAsOrCrash(Object object, Class<T> clazz) throws ClassCastException{
-        if (clazz.isInstance(object)) {
+    static <T> T getAsOrCrash(Object object, Class<T> className) throws ClassCastException {
+        if (className.isInstance(object)) {
             return (T) object;
         } else {
-            throw new ClassCastException("Not of class " + clazz.getName());
+            throw new ClassCastException("Not of class " + className.getName());
         }
     }
 

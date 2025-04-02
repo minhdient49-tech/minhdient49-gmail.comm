@@ -15,7 +15,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /** The automation rules, plus some automation related things (maybe consider splitting into other classes) */
 public class AutomationRules extends JsonCatalog {
@@ -82,28 +81,20 @@ public class AutomationRules extends JsonCatalog {
                 var automation = catalog.getJSONObject(key);
                 if (!automation.optBoolean("enabled", true)) continue;
 
-                // match referrer
-                if (automation.has("referrer") && !Objects.equals(automation.getString("referrer"), AndroidUtils.getReferrer(cntx))) {
-                    break;
+                // match at least one referrer, if any
+                var referrer = AndroidUtils.getReferrer(cntx);
+                if (referrer != null && JavaUtils.noneMatch(JavaUtils.parseArrayOrElement(automation.opt("referrer"), String.class), referrer::equals, false)) {
+                    continue;
                 }
 
                 // match at least one regex, if any
-                if (automation.has("regex")) {
-                    var anyMatch = false;
-                    for (var pattern : JavaUtils.getArrayOrElement(automation.get("regex"), String.class)) {
-                        if (urlData.url.matches(pattern)) {
-                            anyMatch = true;
-                            break;
-                        }
-                    }
-                    if (!anyMatch) {
-                        break;
-                    }
+                if (JavaUtils.noneMatch(JavaUtils.parseArrayOrElement(automation.opt("regex"), String.class), urlData.url::matches, false)) {
+                    continue;
                 }
 
                 // add as matched
                 matches.add(new MatchedAutomation(
-                        JavaUtils.getArrayOrElement(automation.get("action"), String.class),
+                        JavaUtils.parseArrayOrElement(automation.opt("action"), String.class),
                         automation.optBoolean("stop")));
 
             } catch (Exception e) {
