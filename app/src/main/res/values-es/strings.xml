@@ -100,6 +100,8 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="small">Pequeño</string>
     <string name="normal">Normal</string>
     <string name="big">Grande</string>
+    <string name="format">Formatear</string>
+    <string name="discard">Descartar</string>
     <!--
         json
     -->
