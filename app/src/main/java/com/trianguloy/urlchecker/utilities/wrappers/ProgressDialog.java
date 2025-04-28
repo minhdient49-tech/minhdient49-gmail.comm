@@ -24,9 +24,7 @@ public class ProgressDialog extends android.app.ProgressDialog {
 
     private final Activity cntx;
 
-    /**
-     * Constructs and shows the dialog
-     */
+    /** Constructs and shows the dialog */
     private ProgressDialog(Activity context, int title, JavaUtils.Consumer<ProgressDialog> consumer) {
         super(context);
         cntx = context;
@@ -47,25 +45,19 @@ public class ProgressDialog extends android.app.ProgressDialog {
         }).start();
     }
 
-    /**
-     * progress++
-     */
+    /** progress++ */
     public void increaseProgress() {
         setProgress(getProgress() + 1);
     }
 
-    /**
-     * sets max value and resets to 0
-     */
+    /** sets max value and resets to 0 */
     @Override
     public void setMax(int max) {
         super.setMax(max);
         setProgress(0);
     }
 
-    /**
-     * Changes the message from any thread
-     */
+    /** Changes the message from any thread */
     @Override
     public void setMessage(CharSequence message) {
         cntx.runOnUiThread(() -> super.setMessage(message));

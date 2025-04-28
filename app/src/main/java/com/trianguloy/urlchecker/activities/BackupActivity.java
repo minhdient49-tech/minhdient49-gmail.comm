@@ -172,9 +172,7 @@ public class BackupActivity extends Activity {
         chooseFile(Intent.ACTION_CREATE_DOCUMENT, this::backup);
     }
 
-    /**
-     * Creates a backup and saves it to [uri]
-     */
+    /** Creates a backup and saves it to [uri] */
     private void backup(Uri uri) {
         ProgressDialog.run(this, R.string.btn_backup, progress -> {
 
@@ -253,9 +251,7 @@ public class BackupActivity extends Activity {
         chooseFile(Intent.ACTION_OPEN_DOCUMENT, this::askRestore);
     }
 
-    /**
-     * Asks to restore a backup from [uri]
-     */
+    /** Asks to restore a backup from [uri] */
     private void askRestore(Uri uri) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.bck_restoreTitle)
@@ -265,9 +261,7 @@ public class BackupActivity extends Activity {
                 .show();
     }
 
-    /**
-     * Restores a backup from [uri]
-     */
+    /** Restores a backup from [uri] */
     private void restore(Uri uri) {
         ProgressDialog.run(this, R.string.btn_restore, progress -> {
             progress.setMax(5);

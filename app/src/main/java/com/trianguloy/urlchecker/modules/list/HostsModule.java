@@ -18,9 +18,7 @@ import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * This module checks for patterns characters in the url
- */
+/** This module checks for patterns characters in the url */
 public class HostsModule extends AModuleData {
 
     @Override

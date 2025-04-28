@@ -6,16 +6,12 @@ import java.util.Map;
 public interface Enums {
 
     interface StringEnum {
-        /**
-         * This must return the string resourced associated with this enum value
-         */
+        /** This must return the string resourced associated with this enum value */
         int getStringResource();
     }
 
     interface IdEnum {
-        /**
-         * The id of the saved preference. Must never change
-         */
+        /** The id of the saved preference. Must never change */
         int getId();
     }
 
@@ -23,9 +19,7 @@ public interface Enums {
         int getImageResource();
     }
 
-    /**
-     * Get an enum from an id
-     */
+    /** Get an enum from an id */
     static <TE extends IdEnum> TE toEnum(Class<TE> te, int id) {
         TE[] enumConstants = te.getEnumConstants();
         for (TE constant : enumConstants) {
@@ -36,9 +30,7 @@ public interface Enums {
         return null;
     }
 
-    /**
-     * Get a map of id and enum
-     */
+    /** Get a map of id and enum */
     static <TE extends IdEnum> Map<Integer, TE> toEnumMap(Class<TE> te) {
         Map<Integer, TE> res = new HashMap<>();
         TE[] enumConstants = te.getEnumConstants();

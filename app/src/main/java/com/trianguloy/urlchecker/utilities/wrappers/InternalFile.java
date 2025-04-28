@@ -8,9 +8,7 @@ import com.trianguloy.urlchecker.utilities.methods.StreamUtils;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * Represents an internal file, can be modified
- */
+/** Represents an internal file, can be modified */
 public class InternalFile {
     private final String fileName;
     private final Context cntx;
@@ -20,9 +18,7 @@ public class InternalFile {
         this.cntx = cntx;
     }
 
-    /**
-     * Returns the content, null if the file doesn't exists or can't be read
-     */
+    /** Returns the content, null if the file doesn't exists or can't be read */
     public String get() {
         try {
             return StreamUtils.inputStream2String(cntx.openFileInput(fileName));
@@ -31,9 +27,7 @@ public class InternalFile {
         }
     }
 
-    /**
-     * Streams the lines
-     */
+    /** Streams the lines */
     public boolean stream(JavaUtils.Consumer<String> function) {
         try {
             StreamUtils.consumeLines(cntx.openFileInput(fileName), function);
@@ -44,9 +38,7 @@ public class InternalFile {
         }
     }
 
-    /**
-     * Sets a new file content
-     */
+    /** Sets a new file content */
     public boolean set(String content) {
 
         // the same, already saved
@@ -64,9 +56,7 @@ public class InternalFile {
         }
     }
 
-    /**
-     * Deletes the file
-     */
+    /** Deletes the file */
     public void delete() {
         cntx.deleteFile(fileName);
     }

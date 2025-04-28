@@ -10,9 +10,7 @@ import com.trianguloy.urlchecker.utilities.wrappers.InternalFile;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Represents a generic catalog
- */
+/** Represents a generic catalog */
 public abstract class JsonCatalog implements JsonEditorInterface {
 
     private final Activity cntx;
@@ -29,9 +27,7 @@ public abstract class JsonCatalog implements JsonEditorInterface {
         custom = new InternalFile(fileName, cntx);
     }
 
-    /**
-     * Returns the current catalog
-     */
+    /** Returns the current catalog */
     public JSONObject getCatalog() {
         // get the updated file first
         try {
@@ -44,9 +40,7 @@ public abstract class JsonCatalog implements JsonEditorInterface {
         return getBuiltIn();
     }
 
-    /**
-     * Gets the builtin catalog
-     */
+    /** Gets the builtin catalog */
     public JSONObject getBuiltIn() {
         try {
             return buildBuiltIn(cntx);
@@ -56,14 +50,10 @@ public abstract class JsonCatalog implements JsonEditorInterface {
         }
     }
 
-    /**
-     * Builds the builtIn catalog
-     */
+    /** Builds the builtIn catalog */
     abstract public JSONObject buildBuiltIn(Context cntx) throws JSONException;
 
-    /**
-     * Saves a json as new catalog
-     */
+    /** Saves a json as new catalog */
     public boolean save(JSONObject content) {
 
         // same as builtin (maybe a reset?), delete custom

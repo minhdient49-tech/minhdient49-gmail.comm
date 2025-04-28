@@ -21,9 +21,7 @@ import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
 
 import java.util.Date;
 
-/**
- * A module that logs all urls that passes through it
- */
+/** A module that logs all urls that passes through it */
 public class LogModule extends AModuleData {
 
     public static final String PREF = "log_data";
@@ -116,9 +114,7 @@ class LogConfig extends AModuleConfig {
         LogModule.LOG_LIMIT(getActivity()).attachToEditText(views.findViewById(R.id.limit), 0);
     }
 
-    /**
-     * Display the log, editable or clickable
-     */
+    /** Display the log, editable or clickable */
     public void showLog(boolean editable) {
         // init textview with content
         // on editable: an editText

@@ -20,30 +20,22 @@ public class ResultCodeInjector {
     /* ------------------- client use ------------------- */
 
     public interface ActivityResultListener {
-        /**
-         * Called when the event fires for a particular registrar
-         */
+        /** Called when the event fires for a particular registrar */
         void onActivityResult(int resultCode, Intent data);
     }
 
     public interface RequestPermissionsResultListener {
-        /**
-         * Called when the event fires for a particular registrar
-         */
+        /** Called when the event fires for a particular registrar */
         void onRequestPermissionsResult(String[] permissions, int[] grantResults);
     }
 
-    /**
-     * Call this to register an onActivityResult listener. Returns the requestCode you must use in the startActivityForResult call
-     */
+    /** Call this to register an onActivityResult listener. Returns the requestCode you must use in the startActivityForResult call */
     public int registerActivityResult(ActivityResultListener activityResultListener) {
         activityResultListeners.add(activityResultListener);
         return RESERVED + activityResultListeners.size() - 1;
     }
 
-    /**
-     * Call this to register an onActivityResult listener. Returns the requestCode you must use in the startActivityForResult call
-     */
+    /** Call this to register an onActivityResult listener. Returns the requestCode you must use in the startActivityForResult call */
     public int registerPermissionsResult(RequestPermissionsResultListener requestPermissionsResultListener) {
         requestPermissionsResultListeners.add(requestPermissionsResultListener);
         return RESERVED + requestPermissionsResultListeners.size() - 1;

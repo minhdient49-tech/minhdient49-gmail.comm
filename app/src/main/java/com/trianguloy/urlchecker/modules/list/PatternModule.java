@@ -28,9 +28,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.regex.Pattern;
 
-/**
- * This module checks for patterns characters in the url
- */
+/** This module checks for patterns characters in the url */
 public class PatternModule extends AModuleData {
 
     @Override
@@ -229,9 +227,7 @@ class PatternDialog extends AModuleDialog {
         if (message.newUrl != null) fix.setOnClickListener(v -> setUrl(new UrlData(message.newUrl).putData(APPLIED + message.pattern, message.pattern)));
     }
 
-    /**
-     * DataClass for pattern messages
-     */
+    /** DataClass for pattern messages */
     private static class Message {
         final String pattern;
         public boolean matches = false;

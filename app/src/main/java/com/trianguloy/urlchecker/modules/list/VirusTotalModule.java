@@ -24,9 +24,7 @@ import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
 import java.util.List;
 
-/**
- * This module uses the VirusTotal api (https://developers.virustotal.com/reference) for url reports
- */
+/** This module uses the VirusTotal api (https://developers.virustotal.com/reference) for url reports */
 public class VirusTotalModule extends AModuleData {
 
     public static final String PREF = "api_key";
@@ -163,9 +161,7 @@ class VirusTotalDialog extends AModuleDialog {
         updateUI();
     }
 
-    /**
-     * Manages the scanning in the background
-     */
+    /** Manages the scanning in the background */
     private void _scanUrl() {
         VirusTotalUtility.InternalReponse response;
         while (scanning) {
@@ -190,9 +186,7 @@ class VirusTotalDialog extends AModuleDialog {
 
     }
 
-    /**
-     * Updates the ui
-     */
+    /** Updates the ui */
     private void updateUI() {
         if (scanning) {
             // scanning in progress, show cancel

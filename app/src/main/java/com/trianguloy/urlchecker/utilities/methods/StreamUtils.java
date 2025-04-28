@@ -11,9 +11,7 @@ import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Generic utilities related to streams (urls, strings, bytes...)
- */
+/** Generic utilities related to streams (urls, strings, bytes...) */
 public interface StreamUtils {
     Charset UTF_8 = Charset.forName("UTF-8"); // StandardCharsets.UTF_8 requires api 19
 

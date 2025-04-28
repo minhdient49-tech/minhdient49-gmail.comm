@@ -39,9 +39,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-/**
- * This module allows flag edition
- */
+/** This module allows flag edition */
 public class FlagsModule extends AModuleData {
 
 

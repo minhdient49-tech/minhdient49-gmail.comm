@@ -33,9 +33,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Generic Android utilities
- */
+/** Generic Android utilities */
 public interface AndroidUtils {
 
     /**
@@ -62,32 +60,24 @@ public interface AndroidUtils {
         // non-debug, just discard
     }
 
-    /**
-     * Sets the background color (resource id) of a view using a rounded box drawable
-     */
+    /** Sets the background color (resource id) of a view using a rounded box drawable */
     static void setRoundedColor(int color, View view) {
         setRawRoundedColor(view.getContext().getResources().getColor(color), view);
     }
 
-    /**
-     * Sets the background color (raw color) of a view using a rounded box drawable
-     */
+    /** Sets the background color (raw color) of a view using a rounded box drawable */
     static void setRawRoundedColor(int color, View view) {
         var drawable = view.getContext().getResources().getDrawable(R.drawable.round_box);
         drawable.setColorFilter(color, PorterDuff.Mode.SRC);
         view.setBackgroundDrawable(drawable);
     }
 
-    /**
-     * Clears the background color of a view
-     */
+    /** Clears the background color of a view */
     static void clearRoundedColor(View view) {
         view.setBackgroundDrawable(null);
     }
 
-    /**
-     * Makes the text of a textview display as a link (which does nothing when clicked)
-     */
+    /** Makes the text of a textview display as a link (which does nothing when clicked) */
     static void setAsClickable(TextView textview) {
         SpannableStringBuilder text = new SpannableStringBuilder(textview.getText());
         text.setSpan(new ClickableSpan() {
@@ -113,16 +103,12 @@ public interface AndroidUtils {
         return DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, locale).format(new Date(millis));
     }
 
-    /**
-     * Copy to the clipboard, retrieves string from id
-     */
+    /** Copy to the clipboard, retrieves string from id */
     static void copyToClipboard(Activity activity, int id, String text) {
         copyToClipboard(activity, activity.getString(id), text);
     }
 
-    /**
-     * Copy to the clipboard
-     */
+    /** Copy to the clipboard */
     static void copyToClipboard(Activity activity, String toast, String text) {
         ClipboardManager clipboard = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
         if (clipboard == null) return;
@@ -189,9 +175,7 @@ public interface AndroidUtils {
         listener.accept(view);
     }
 
-    /**
-     * Adds an onLongClickListener that will show a toast with the contentdescription
-     */
+    /** Adds an onLongClickListener that will show a toast with the contentdescription */
     static void longTapForDescription(View view) {
         view.setOnLongClickListener(v -> {
             var contentDescription = v.getContentDescription();
@@ -204,17 +188,13 @@ public interface AndroidUtils {
         });
     }
 
-    /**
-     * Sets the text and the visibility of a textview (visible iff there is text)
-     */
+    /** Sets the text and the visibility of a textview (visible iff there is text) */
     static void setHideableText(TextView view, CharSequence text) {
         view.setText(text);
         view.setVisibility(text == null || text.length() == 0 ? View.GONE : View.VISIBLE);
     }
 
-    /**
-     * Fixes the color of a MenuItem icon (colorFilter=textColorPrimary)
-     */
+    /** Fixes the color of a MenuItem icon (colorFilter=textColorPrimary) */
     static void fixMenuIconColor(MenuItem menuItem, Context cntx) {
         // get color
         var resolvedAttr = new TypedValue();
@@ -224,9 +204,7 @@ public interface AndroidUtils {
         menuItem.getIcon().setColorFilter(cntx.getResources().getColor(resolvedAttr.resourceId), PorterDuff.Mode.SRC_IN);
     }
 
-    /**
-     * Returns all the unique links found on a given text
-     */
+    /** Returns all the unique links found on a given text */
     static Set<String> getLinksFromText(CharSequence text) {
         var links = new HashSet<String>();
         var matcher = Patterns.WEB_URL.matcher(text);

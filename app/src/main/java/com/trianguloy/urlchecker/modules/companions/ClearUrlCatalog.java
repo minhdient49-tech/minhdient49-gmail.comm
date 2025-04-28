@@ -28,9 +28,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Manages the local catalog with the rules
- */
+/** Manages the local catalog with the rules */
 public class ClearUrlCatalog implements JsonEditorInterface {
 
     /* ------------------- constants ------------------- */
@@ -69,9 +67,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
 
     /* ------------------- catalog ------------------- */
 
-    /**
-     * Returns the catalog content
-     */
+    /** Returns the catalog content */
     public JSONObject getCatalog() {
         // get the updated file first
         String internal = custom.get();
@@ -81,9 +77,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         return getBuiltIn();
     }
 
-    /**
-     * Returns the built-in catalog
-     */
+    /** Returns the built-in catalog */
     public JSONObject getBuiltIn() {
         // read internal file
         String builtIn = this.builtIn.get();
@@ -119,9 +113,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         }
     }
 
-    /**
-     * For {@link this#setRules(JSONObject, boolean)} return value
-     */
+    /** For {@link this#setRules(JSONObject, boolean)} return value */
     enum Result {
         UP_TO_DATE,
         UPDATED,
@@ -166,9 +158,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         return custom.set(content) ? Result.UPDATED : Result.ERROR;
     }
 
-    /**
-     * Deletes the custom catalog, built-in one will be returned afterwards
-     */
+    /** Deletes the custom catalog, built-in one will be returned afterwards */
     public void clear() {
         custom.delete();
         lastUpdate.clear();
@@ -178,9 +168,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
 
     // ------------------- dialogs -------------------
 
-    /**
-     * Show the rules editor dialog
-     */
+    /** Show the rules editor dialog */
     public void showEditor() {
         showEditor(cntx);
     }
@@ -211,9 +199,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
         return cntx.getString(R.string.mClear_editor);
     }
 
-    /**
-     * Show the updater dialog
-     */
+    /** Show the updater dialog */
     public void showUpdater() {
         // prepare dialog content
         View views = cntx.getLayoutInflater().inflate(R.layout.config_clearurls_updater, null);
@@ -274,9 +260,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
 
     // ------------------- internal -------------------
 
-    /**
-     * If the catalog is old, updates it in background. Otherwise does nothing.
-     */
+    /** If the catalog is old, updates it in background. Otherwise does nothing. */
     private void updateIfNecessary() {
         if (autoUpdate.get() && lastUpdate.get() + AUTOUPDATE_PERIOD < System.currentTimeMillis()) {
             new Thread(() -> {

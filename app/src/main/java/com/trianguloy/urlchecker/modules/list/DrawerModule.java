@@ -15,9 +15,7 @@ import com.trianguloy.urlchecker.url.UrlData;
 
 import java.util.List;
 
-/**
- * A special module that manages the drawer functionality
- */
+/** A special module that manages the drawer functionality */
 public class DrawerModule extends AModuleData {
     @Override
     public String getId() {

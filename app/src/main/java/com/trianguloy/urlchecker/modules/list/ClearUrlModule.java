@@ -30,9 +30,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * This module clears the url using the ClearUrl catalog
- */
+/** This module clears the url using the ClearUrl catalog */
 public class ClearUrlModule extends AModuleData {
 
     public static GenericPref.Bool REFERRAL_PREF(Context cntx) {
@@ -329,42 +327,32 @@ class ClearUrlDialog extends AModuleDialog {
 
     /* ------------------- internal ------------------- */
 
-    /**
-     * Dataclass for transferring data
-     */
+    /** Dataclass for transferring data */
     private class Data {
         public boolean enabled = false;
         String info = "";
         int color = 0;
 
-        /**
-         * Changes the color, managing importance
-         */
+        /** Changes the color, managing importance */
         void setColor(int newColor) {
             if (color == R.color.bad && newColor == R.color.warning) return; // keep bad instead of replacing with warning
             color = newColor;
         }
 
-        /**
-         * Appends a line to the info textview, manages linebreaks
-         */
+        /** Appends a line to the info textview, manages linebreaks */
         void addInfo(int line, Object... formatArgs) {
             if (!info.isEmpty()) info += "\n";
             info += getActivity().getString(line, formatArgs);
         }
 
-        /**
-         * utility to append details to the info textview, after calling append
-         */
+        /** utility to append details to the info textview, after calling append */
         void addDetails(String data) {
             info += ": " + data;
         }
 
     }
 
-    /**
-     * Clear the url
-     */
+    /** Clear the url */
     private void clear() {
         if (cleared != null) setUrl(new UrlData(cleared).putData(CLEARED, CLEARED));
     }

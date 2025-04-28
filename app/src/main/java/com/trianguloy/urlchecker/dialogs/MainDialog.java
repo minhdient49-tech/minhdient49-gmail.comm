@@ -42,14 +42,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * The main dialog, when opening a url
- */
+/** The main dialog, when opening a url */
 public class MainDialog extends Activity {
 
-    /**
-     * Maximum number of updates to avoid loops
-     */
+    /** Maximum number of updates to avoid loops */
     private static final int MAX_UPDATES = 100;
 
     // ------------------- helpers -------------------
@@ -58,36 +54,24 @@ public class MainDialog extends Activity {
 
     // ------------------- data -------------------
 
-    /**
-     * All active modules
-     */
+    /** All active modules */
     private final Map<AModuleDialog, List<View>> modules = new HashMap<>();
 
-    /**
-     * Global data to keep even if the url changes
-     */
+    /** Global data to keep even if the url changes */
     public final Map<String, String> globalData = new HashMap<>();
 
-    /**
-     * Available automations
-     */
+    /** Available automations */
     private final Map<String, Runnable> automations = new ArrayMap<>();
 
-    /**
-     * The current url
-     */
+    /** The current url */
     private UrlData urlData = new UrlData("");
 
-    /**
-     * Currently in the process of updating.
-     */
+    /** Currently in the process of updating. */
     private int updating = 0;
 
     // ------------------- module functions -------------------
 
-    /**
-     * Something wants to set a new url.
-     */
+    /** Something wants to set a new url. */
     public void onNewUrl(UrlData newUrlData) {
         // mark as next if nothing else yet
         if (updating != 0) {
@@ -206,9 +190,7 @@ public class MainDialog extends Activity {
         return urlData;
     }
 
-    /**
-     * Changes a module visibility
-     */
+    /** Changes a module visibility */
     public void setModuleVisibility(AModuleDialog module, boolean visible) {
         var views = modules.get(module);
         if (views == null) {
@@ -283,9 +265,7 @@ public class MainDialog extends Activity {
         }
     }
 
-    /**
-     * Initializes the modules
-     */
+    /** Initializes the modules */
     private void initializeModules() {
         modules.clear();
         ll_main.removeAllViews();
@@ -371,16 +351,12 @@ public class MainDialog extends Activity {
         }
     }
 
-    /**
-     * Adds a separator component to the list of mods
-     */
+    /** Adds a separator component to the list of mods */
     private View addSeparator(LinearLayout ll) {
         return Inflater.inflate(R.layout.separator, ll);
     }
 
-    /**
-     * Returns the url that this activity was opened with (intent uri or sent text)
-     */
+    /** Returns the url that this activity was opened with (intent uri or sent text) */
     private Set<String> getOpenUrl() {
         // get the intent
         var intent = getIntent();
@@ -432,9 +408,7 @@ public class MainDialog extends Activity {
 
     /* ------------------- its a secret! ------------------- */
 
-    /**
-     * To be set when there is no module displayed
-     */
+    /** To be set when there is no module displayed */
     private View egg() {
         var frame = new FrameLayout(this);
 

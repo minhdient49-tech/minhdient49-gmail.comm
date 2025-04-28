@@ -143,9 +143,7 @@ class StatusDialog extends AModuleDialog {
         updateRedirect(null);
     }
 
-    /**
-     * Starts the checking process
-     */
+    /** Starts the checking process */
     private void check(boolean disableUpdates) {
         // disable button
         check.setEnabled(false);

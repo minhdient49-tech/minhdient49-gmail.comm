@@ -10,9 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Represents the catalog of the Pattern module
- */
+/** Represents the catalog of the Pattern module */
 public class PatternCatalog extends JsonCatalog {
 
     public PatternCatalog(Activity cntx) {

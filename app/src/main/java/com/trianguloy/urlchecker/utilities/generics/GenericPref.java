@@ -34,19 +34,13 @@ public abstract class GenericPref<T> {
         return cntx.getSharedPreferences(cntx.getPackageName(), Context.MODE_PRIVATE);
     }
 
-    /**
-     * android sharedprefs
-     */
+    /** android sharedprefs */
     protected SharedPreferences prefs;
 
-    /**
-     * this preference name
-     */
+    /** this preference name */
     protected final String prefName;
 
-    /**
-     * This preference default value
-     */
+    /** This preference default value */
     public final T defaultValue;
 
     /**
@@ -61,9 +55,7 @@ public abstract class GenericPref<T> {
         prefs = getPrefs(cntx);
     }
 
-    /**
-     * @return the value of this preference
-     */
+    /** @return the value of this preference */
     public abstract T get();
 
     /**
@@ -80,14 +72,10 @@ public abstract class GenericPref<T> {
         }
     }
 
-    /**
-     * Sets a [value] for this preference.
-     */
+    /** Sets a [value] for this preference. */
     protected abstract void save(T value);
 
-    /**
-     * Clears this preference value
-     */
+    /** Clears this preference value */
     public void clear() {
         prefs.edit().remove(prefName).apply();
     }
@@ -129,9 +117,7 @@ public abstract class GenericPref<T> {
 
     // ------------------- Implementations -------------------
 
-    /**
-     * An Int preference
-     */
+    /** An Int preference */
     static public class Int extends GenericPref<Integer> {
         public Int(String prefName, Integer defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
@@ -174,9 +160,7 @@ public abstract class GenericPref<T> {
         }
     }
 
-    /**
-     * A Long preference
-     */
+    /** A Long preference */
     static public class Lng extends GenericPref<Long> {
         public Lng(String prefName, Long defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
@@ -193,9 +177,7 @@ public abstract class GenericPref<T> {
         }
     }
 
-    /**
-     * A boolean preference
-     */
+    /** A boolean preference */
     static public class Bool extends GenericPref<Boolean> {
         public Bool(String prefName, Boolean defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
@@ -211,25 +193,19 @@ public abstract class GenericPref<T> {
             prefs.edit().putBoolean(prefName, value).apply();
         }
 
-        /**
-         * This switch will be set to the pref value, and when the switch changes the value will too
-         */
+        /** This switch will be set to the pref value, and when the switch changes the value will too */
         public void attachToSwitch(Switch vSwitch) {
             vSwitch.setChecked(get());
             vSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> set(isChecked));
         }
 
-        /**
-         * Toggles this setting
-         */
+        /** Toggles this setting */
         public void toggle() {
             set(!get());
         }
     }
 
-    /**
-     * A string preference
-     */
+    /** A string preference */
     static public class Str extends GenericPref<String> {
         public Str(String prefName, String defaultValue, Context cntx) {
             super(prefName, defaultValue, cntx);
@@ -245,23 +221,17 @@ public abstract class GenericPref<T> {
             prefs.edit().putString(prefName, value).apply();
         }
 
-        /**
-         * Adds the value to the existing content
-         */
+        /** Adds the value to the existing content */
         public void add(String value) {
             set(get() + value);
         }
 
-        /**
-         * This editText will be set to the pref value, and when the editText changes the value will too
-         */
+        /** This editText will be set to the pref value, and when the editText changes the value will too */
         public void attachToEditText(EditText editText) {
             this.attachToEditText(editText, str -> str, str -> str);
         }
 
-        /**
-         * This editText will be set to the pref value modified by loadMod, and when the editText changes the value will be modified by storeMod and saved
-         */
+        /** This editText will be set to the pref value modified by loadMod, and when the editText changes the value will be modified by storeMod and saved */
         public void attachToEditText(EditText editText, JavaUtils.UnaryOperator<String> loadMod, JavaUtils.UnaryOperator<String> storeMod) {
             editText.setText(loadMod.apply(get()));
             editText.addTextChangedListener(new DefaultTextWatcher() {
@@ -320,9 +290,7 @@ public abstract class GenericPref<T> {
         }
     }
 
-    /**
-     * A list of options (enumeration) preference
-     */
+    /** A list of options (enumeration) preference */
     static public class Enumeration<T extends Enum<T> & Enums.IdEnum & Enums.StringEnum> extends GenericPref<T> {
         private final Class<T> type;
 

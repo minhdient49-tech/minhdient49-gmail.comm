@@ -20,9 +20,7 @@ public interface AndroidSettings {
 
     /* ------------------- day/light theme ------------------- */
 
-    /**
-     * The theme setting
-     */
+    /** The theme setting */
     enum Theme implements Enums.IdEnum, Enums.StringEnum {
         DEFAULT(0, R.string.deviceDefault),
         DARK(1, R.string.spin_darkTheme),
@@ -48,16 +46,12 @@ public interface AndroidSettings {
         }
     }
 
-    /**
-     * The theme pref
-     */
+    /** The theme pref */
     static GenericPref.Enumeration<Theme> THEME_PREF(Context cntx) {
         return new GenericPref.Enumeration<>("dayNight", Theme.DEFAULT, Theme.class, cntx);
     }
 
-    /**
-     * Sets the theme (light/dark mode) to an activity
-     */
+    /** Sets the theme (light/dark mode) to an activity */
     static void setTheme(Context activity, boolean dialog) {
         int style;
         switch (THEME_PREF(activity).get()) {
@@ -91,18 +85,14 @@ public interface AndroidSettings {
     String RELOAD_EXTRA = "reloaded";
     int RELOAD_RESULT_CODE = Activity.RESULT_FIRST_USER;
 
-    /**
-     * destroys and recreates the activity (to apply changes) and marks it
-     */
+    /** destroys and recreates the activity (to apply changes) and marks it */
     static void reload(Activity cntx) {
         Log.d("SETTINGS", "reloading");
         cntx.getIntent().putExtra(RELOAD_EXTRA, true); // keep data
         cntx.recreate();
     }
 
-    /**
-     * Returns true if the activity was reloaded (with {@link AndroidSettings#reload}) and clears the flag
-     */
+    /** Returns true if the activity was reloaded (with {@link AndroidSettings#reload}) and clears the flag */
     static boolean wasReloaded(Activity cntx) {
         var intent = cntx.getIntent();
         var reloaded = intent.getBooleanExtra(RELOAD_EXTRA, false);
@@ -110,9 +100,7 @@ public interface AndroidSettings {
         return reloaded;
     }
 
-    /**
-     * Registers an activity result to reload if the launched activity is marked as reloading using{@link AndroidSettings#markForReloading(Activity)}
-     */
+    /** Registers an activity result to reload if the launched activity is marked as reloading using{@link AndroidSettings#markForReloading(Activity)} */
     static int registerForReloading(ResultCodeInjector resultCodeInjector, Activity cntx) {
         return resultCodeInjector.registerActivityResult((resultCode, data) -> {
             if (resultCode == RELOAD_RESULT_CODE) {
@@ -121,9 +109,7 @@ public interface AndroidSettings {
         });
     }
 
-    /**
-     * Makes the activity that launched this one to reload, if registered with {@link AndroidSettings#registerForReloading(ResultCodeInjector, Activity)}
-     */
+    /** Makes the activity that launched this one to reload, if registered with {@link AndroidSettings#registerForReloading(ResultCodeInjector, Activity)} */
     static void markForReloading(Activity cntx) {
         cntx.setResult(RELOAD_RESULT_CODE);
     }
