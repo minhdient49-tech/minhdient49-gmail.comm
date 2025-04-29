@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.utilities.methods;
 
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -45,7 +47,7 @@ public interface StreamUtils {
     }
 
     /** Reads an input stream and streams its lines. */
-    static void consumeLines(InputStream is, JavaUtils.Consumer<String> function) {
+    static void consumeLines(InputStream is, Consumer<String> function) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, UTF_8))) {
             String line;
             while ((line = reader.readLine()) != null) {

@@ -9,6 +9,7 @@ import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.utilities.generics.JsonCatalog;
 import com.trianguloy.urlchecker.utilities.methods.HttpUtils;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.wrappers.InternalFile;
 import com.trianguloy.urlchecker.utilities.wrappers.ProgressDialog;
 
@@ -200,7 +201,7 @@ public class Hosts {
     }
 
     /** returns the bucket of a value, if not ready computes it */
-    private HashMap<String, Pair<String, String>> getBucket(String value, JavaUtils.Function<Integer, HashMap<String, Pair<String, String>>> compute) {
+    private HashMap<String, Pair<String, String>> getBucket(String value, Function<Integer, HashMap<String, Pair<String, String>>> compute) {
         // HASHING
         var hash = Math.floorMod(value.hashCode(), FILES);
 

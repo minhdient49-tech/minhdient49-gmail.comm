@@ -4,6 +4,7 @@ import com.trianguloy.urlchecker.dialogs.MainDialog;
 import com.trianguloy.urlchecker.fragments.Fragment;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public abstract class AModuleDialog implements Fragment {
      * To modify the url call the setNewUrl callback. It will return true iff you can stop processing changes (false if you need to continue).
      * > if(setNewUrl.apply(new UrlData(""))) return;
      */
-    public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
+    public void onModifyUrl(UrlData urlData, Function<UrlData, Boolean> setNewUrl) {
     }
 
     /** Update UI and all needed for this final url. This will only be called for the final shown url. */

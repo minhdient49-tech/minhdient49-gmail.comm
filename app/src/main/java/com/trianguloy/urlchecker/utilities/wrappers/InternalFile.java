@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.utilities.wrappers;
 import android.content.Context;
 
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import com.trianguloy.urlchecker.utilities.methods.StreamUtils;
 
 import java.io.FileOutputStream;
@@ -28,7 +29,7 @@ public class InternalFile {
     }
 
     /** Streams the lines */
-    public boolean stream(JavaUtils.Consumer<String> function) {
+    public boolean stream(Consumer<String> function) {
         try {
             StreamUtils.consumeLines(cntx.openFileInput(fileName), function);
             return true;

@@ -17,7 +17,7 @@ public interface JavaUtils {
 
     /** Converts an iterator to a list */
     static <T> List<T> toList(Iterator<T> iterator) {
-        List<T> list = new ArrayList<>();
+        var list = new ArrayList<T>();
         while (iterator.hasNext()) {
             list.add(iterator.next());
         }
@@ -68,7 +68,7 @@ public interface JavaUtils {
 
         if (object instanceof JSONArray array) {
             // List
-            for (int i = 0; i < array.length(); i++) {
+            for (var i = 0; i < array.length(); i++) {
                 result.add(getAsOrCrash(array.get(i), className));
             }
         } else if (object != null) {
@@ -107,12 +107,12 @@ public interface JavaUtils {
      * The order does not matter.
      */
     static boolean containsWords(String body, String keywords) {
-        JavaUtils.Function<String, String> filter = s -> s.toUpperCase().replaceAll("[\\s-_]+", " ");
+        UnaryOperator<String> filter = s -> s.toUpperCase().replaceAll("[\\s-_]+", " ");
         // Match all words
-        String[] words = filter.apply(keywords).split(" ");
+        var words = filter.apply(keywords).split(" ");
         body = filter.apply(body);
-        boolean match = true;
-        for (String str : words) {
+        var match = true;
+        for (var str : words) {
             if (!body.contains(str)) {
                 match = false;
                 break;
@@ -188,13 +188,13 @@ public interface JavaUtils {
         R apply(T t);
     }
 
-    /** Negates a boolean Function */
-    static <T> Function<T, Boolean> negate(Function<T, Boolean> function) {
-        return t -> !function.apply(t);
-    }
-
     /** java.util.function.UnaryOperator requires api 24 */
     @FunctionalInterface
     interface UnaryOperator<T> extends Function<T, T> {
+    }
+
+    /** Negates a boolean Function */
+    static <T> Function<T, Boolean> negate(Function<T, Boolean> function) {
+        return t -> !function.apply(t);
     }
 }

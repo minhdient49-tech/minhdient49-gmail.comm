@@ -3,6 +3,7 @@ package com.trianguloy.urlchecker.utilities.wrappers;
 import android.app.Activity;
 
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 /**
  * A wrapper around {@link android.app.ProgressDialog} with more useful functions
@@ -18,14 +19,14 @@ public class ProgressDialog extends android.app.ProgressDialog {
      *     });
      * </pre>
      */
-    public static void run(Activity context, int title, JavaUtils.Consumer<ProgressDialog> consumer) {
+    public static void run(Activity context, int title, Consumer<ProgressDialog> consumer) {
         new ProgressDialog(context, title, consumer);
     }
 
     private final Activity cntx;
 
     /** Constructs and shows the dialog */
-    private ProgressDialog(Activity context, int title, JavaUtils.Consumer<ProgressDialog> consumer) {
+    private ProgressDialog(Activity context, int title, Consumer<ProgressDialog> consumer) {
         super(context);
         cntx = context;
         setTitle(title); // can't be changed later

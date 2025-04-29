@@ -18,6 +18,7 @@ import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Inflater;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.wrappers.RegexFix;
 
 import org.json.JSONArray;
@@ -108,7 +109,7 @@ class PatternDialog extends AModuleDialog {
     }
 
     @Override
-    public void onModifyUrl(UrlData urlData, JavaUtils.Function<UrlData, Boolean> setNewUrl) {
+    public void onModifyUrl(UrlData urlData, Function<UrlData, Boolean> setNewUrl) {
         // init
         messages.clear();
 

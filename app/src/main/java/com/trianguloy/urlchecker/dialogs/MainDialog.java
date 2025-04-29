@@ -33,7 +33,7 @@ import com.trianguloy.urlchecker.utilities.AndroidSettings;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Animations;
 import com.trianguloy.urlchecker.utilities.methods.Inflater;
-import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 
 import org.json.JSONObject;
@@ -64,7 +64,7 @@ public class MainDialog extends Activity {
     public final Map<String, String> globalData = new HashMap<>();
 
     /** Available automations */
-    private final Map<String, JavaUtils.Consumer<JSONObject>> automations = new ArrayMap<>();
+    private final Map<String, Consumer<JSONObject>> automations = new ArrayMap<>();
 
     /** The current url */
     private UrlData urlData = new UrlData("");

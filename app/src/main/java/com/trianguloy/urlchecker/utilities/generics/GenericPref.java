@@ -15,6 +15,9 @@ import android.widget.TextView;
 
 import com.trianguloy.urlchecker.utilities.Enums;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.UnaryOperator;
 import com.trianguloy.urlchecker.utilities.wrappers.DefaultTextWatcher;
 
 import java.util.ArrayList;
@@ -90,7 +93,7 @@ public abstract class GenericPref<T> {
      * Attaches this value to a spinner+label.
      * pref2seekBar must map a pref->(seekBar,label) and seekBar2pref from spinner->pref.
      */
-    public void attachToSeekBar(SeekBar seekBar, TextView label, JavaUtils.Function<T, Pair<Integer, String>> pref2seekBar, JavaUtils.Function<Integer, T> seekBar2pref) {
+    public void attachToSeekBar(SeekBar seekBar, TextView label, Function<T, Pair<Integer, String>> pref2seekBar, Function<Integer, T> seekBar2pref) {
         var valueLabel = pref2seekBar.apply(get());
         seekBar.setProgress(valueLabel.first);
         label.setText(valueLabel.second);
@@ -232,7 +235,7 @@ public abstract class GenericPref<T> {
         }
 
         /** This editText will be set to the pref value modified by loadMod, and when the editText changes the value will be modified by storeMod and saved */
-        public void attachToEditText(EditText editText, JavaUtils.UnaryOperator<String> loadMod, JavaUtils.UnaryOperator<String> storeMod) {
+        public void attachToEditText(EditText editText, UnaryOperator<String> loadMod, UnaryOperator<String> storeMod) {
             editText.setText(loadMod.apply(get()));
             editText.addTextChangedListener(new DefaultTextWatcher() {
                 @Override
@@ -317,7 +320,7 @@ public abstract class GenericPref<T> {
          * Populate a spinner with this preference
          * if listener is not null, it will be called each time the spinner changes value
          */
-        public void attachToSpinner(Spinner spinner, JavaUtils.Consumer<T> listener) {
+        public void attachToSpinner(Spinner spinner, Consumer<T> listener) {
             // Put elements in the spinner
             T[] values = type.getEnumConstants();
             List<String> names = new ArrayList<>(values.length);

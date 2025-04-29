@@ -32,6 +32,7 @@ import com.trianguloy.urlchecker.utilities.generics.GenericPref;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
 import com.trianguloy.urlchecker.utilities.methods.Animations;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
@@ -435,7 +436,7 @@ public class BackupActivity extends Activity {
     private static final Function<String, Boolean> IS_PREF_SECRET = List.of(VirusTotalModule.PREF, LogModule.PREF, WebhookModule.URL_PREF)::contains;
     private static final Function<String, Boolean> IS_FILE_CACHE = s -> s.startsWith(Hosts.PREFIX);
 
-    private void chooseFile(String action, JavaUtils.Consumer<Uri> listener) {
+    private void chooseFile(String action, Consumer<Uri> listener) {
         // choose backup file
         var intent = new Intent(action);
         intent.putExtra(Intent.EXTRA_TITLE, getInitialFile());

@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.trianguloy.urlchecker.BuildConfig;
 import com.trianguloy.urlchecker.R;
+import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Consumer;
 
 import java.io.File;
 import java.io.IOException;
@@ -167,7 +168,7 @@ public interface AndroidUtils {
      * [listener] will be called now and when clicked (to update state).
      * If you need to initialize things, do them before calling this.
      */
-    static <V extends View> void toggleableListener(V view, JavaUtils.Consumer<V> toggle, JavaUtils.Consumer<V> listener) {
+    static <V extends View> void toggleableListener(V view, Consumer<V> toggle, Consumer<V> listener) {
         view.setOnClickListener(v -> {
             toggle.accept(view);
             listener.accept(view);
@@ -220,7 +221,7 @@ public interface AndroidUtils {
     }
 
     /** OnClickListener that reports the click position */
-    static void setOnClickWithPositionListener(View view, JavaUtils.Consumer<Pair<Float, Float>> listener) {
+    static void setOnClickWithPositionListener(View view, Consumer<Pair<Float, Float>> listener) {
         var xy = new float[2];
         view.setOnTouchListener((v, event) -> {
             // store any interaction and continue
@@ -237,7 +238,7 @@ public interface AndroidUtils {
      * this code replaces the [MARKER] in [textWithMarker] with the underlined [url]. Will call onClick with the url when clicked.
      * REMEMBER: you need to configure the textview to accept clicks with textview.setMovementMethod(LinkMovementMethod.getInstance());
      */
-    static CharSequence underlineUrl(String textWithMarker, String url, JavaUtils.Consumer<String> onClick) {
+    static CharSequence underlineUrl(String textWithMarker, String url, Consumer<String> onClick) {
         // it does so by using a marker to underline exactly the parameter (wherever it is) and later replace it with the final url
         // all underlined looks bad, and auto-underline may not work with some malformed urls
 
