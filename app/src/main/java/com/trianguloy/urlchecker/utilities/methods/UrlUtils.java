@@ -2,12 +2,17 @@ package com.trianguloy.urlchecker.utilities.methods;
 
 import static com.trianguloy.urlchecker.utilities.methods.JavaUtils.sUTF_8;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Parcelable;
+import android.widget.Toast;
 
+import com.trianguloy.urlchecker.R;
 import com.trianguloy.urlchecker.utilities.wrappers.IntentApp;
 
 import java.net.URLDecoder;
+import java.util.ArrayList;
 
 /** Static utilities related to urls */
 public interface UrlUtils {
