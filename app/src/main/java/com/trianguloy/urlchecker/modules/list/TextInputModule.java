@@ -114,6 +114,7 @@ class TextInputDialog extends AModuleDialog {
             if (start != -1) {
                 start += 3;
                 var end = rawUri.indexOf("/", start);
+                if (end == -1) end = rawUri.length();
 
                 var userinfo = rawUri.indexOf("@", start);
                 if (userinfo != -1 && userinfo < end) start = userinfo + 1;
