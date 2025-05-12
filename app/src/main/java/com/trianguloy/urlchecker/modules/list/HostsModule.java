@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
+
 import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
@@ -67,6 +69,8 @@ class HostsConfig extends AModuleConfig {
         views.findViewById(R.id.edit).setOnClickListener(v ->
                 hosts.showEditor()
         );
+
+        views.<TextView>findViewById(R.id.desc).setText(getStringWithPlaceholder(getActivity(), R.string.mHosts_desc, R.string.stevenBlack_url));
     }
 
 }

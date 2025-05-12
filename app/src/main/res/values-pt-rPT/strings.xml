@@ -20,11 +20,11 @@
     <!--
         about
     -->
-    <string name="txt_about">"Aplicação criada por TrianguloY.
+    <string name="txt_about">"Aplicação criada por %1$s.
 
-Contributions: %1$s.
-Translations: %2$s."</string>
-    <string name="link_blog">"Blog do TrianguloY"</string>
+Contributions: %2$s.
+Translations: %3$s."</string>
+    <string name="link_blog">"Blog do %s"</string>
     <string name="link_changelog">Log de alterações</string>
     <string name="link_source">Código fonte</string>
     <string name="link_privacy">Política de privacidade</string>
@@ -143,7 +143,7 @@ Translations: %2$s."</string>
     <string name="mInput_desc">Exibe o URL atual, que pode ser editado manualmente.</string>
     <!-- -->
     <string name="mVT_name">Scanner de URL</string>
-    <string name="mVT_desc">Quando este módulo está ativado, pode verificar o URL usando o VirusTotal e verificar o relatório.\nÉ necessária uma chave de API pessoal do VirusTotal para que funcione, pode obter uma após se registrar para uma conta gratuita aqui: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Quando este módulo está ativado, pode verificar o URL usando o VirusTotal e verificar o relatório.\nÉ necessária uma chave de API pessoal do VirusTotal para que funcione, pode obter uma após se registrar para uma conta gratuita aqui: %s .</string>
     <string name="mVT_apiKey">Chave de API</string>
     <string name="mVT_tm">VirusTotal™ é uma marca comercial da Google, Inc.</string>
     <string name="mVT_scan">Examinar</string>
@@ -168,7 +168,7 @@ Translations: %2$s."</string>
     <!-- -->
     <string name="mClear_name">Limpador de URL</string>
     <string name="mClear_desc">Esse módulo remove rastreamento, referência e outros parâmetros inúteis da URL. Ele também permite redirecionamentos comuns de URL offline.</string>
-    <string name="mClear_tm">Usa o banco de dados ClearURLs de https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Usa o banco de dados ClearURLs de %s</string>
     <string name="mClear_clear">Aplicar</string>
     <string name="mClear_matches">Corresponde %s</string>
     <string name="mClear_blocked">- BLOQUEADO!</string>
@@ -199,7 +199,7 @@ Translations: %2$s."</string>
     <string name="mClear_hashError">Não foi possível buscar o hash, verifique se o URL é válido e se á uma conexão ativa</string>
     <string name="mClear_hashMismatch">Hashes não correspondem, o ficheiro pode ter sido adulterado. Se quiser pular a verificação, remova a URL de hash</string>
     <string name="mClear_restore">Restaurar caminhos de ClearURLs</string>
-    <string name="mClear_editor">"Regras do catálogo: devem seguir o formato de https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"Regras do catálogo: devem seguir o formato de %s.
 Observe que qualquer modificação nos 'provedores' do objeto pai será substituída se o catálogo for atualizado automaticamente ou manualmente a partir da caixa de diálogo do atualizador. Para que as regras pessoais as definam em um objeto pai diferente (qualquer nome)."</string>
     <!-- -->
     <string name="mRemove_name">Removedor de Consultas</string>
@@ -228,7 +228,7 @@ Para desabilitar o log, basta desabilitar o módulo."</string>
     <string name="mOpen_perDomain">Ordene domínios diferentes independentemente</string>
     <string name="mOpen_noReferrer">Ocultar o aplicativo de origem (referenciador)</string>
     <string name="mHosts_name">Rotulador de hosts</string>
-    <string name="mHosts_desc">Este módulo rotula hosts, configurados especificando-os manualmente ou usando um arquivo semelhante a hosts remotos. Você pode usá-lo para alertar sobre sites perigosos ou especiais. A configuração interna especifica os hosts de StevenBlack (adware/malware, fakenews, jogos de azar e conteúdo adulto) em https://github.com/StevenBlack/hosts</string>
+    <string name="mHosts_desc">Este módulo rotula hosts, configurados especificando-os manualmente ou usando um arquivo semelhante a hosts remotos. Você pode usá-lo para alertar sobre sites perigosos ou especiais. A configuração interna especifica os hosts de StevenBlack (adware/malware, fakenews, jogos de azar e conteúdo adulto) em %s</string>
     <string name="mHosts_info">Anfitrião:</string>
     <string name="mHosts_noLabel">sem rótulo</string>
     <string name="mHosts_adult">conteúdo adulto</string>
@@ -346,6 +346,6 @@ Para desabilitar o log, basta desabilitar o módulo."</string>
     <string name="auto_enabled">Ativar recurso de automações</string>
     <string name="auto_error_toast">Mostrar toast se a automação falhar</string>
     <string name="auto_notFound">Nenhuma automação com a chave \'%s\' está disponível. Certifique-se de que ela seja válida e que o módulo necessário esteja ativo.</string>
-    <string name="mUnshort_desc">Este módulo desencurta ligações enviando-os para https://unshorten.me/, que os avalia nos seus servidores e grava o redirecionamento para futuras petições. Evite desencurtar ligações com dados privados ou confidenciais. \nA API é limitada a 10 solicitações por hora para novas verificações. A resposta do módulo mostrará quantas petições tem pendentes.</string>
+    <string name="mUnshort_desc">Este módulo desencurta ligações enviando-os para %s, que os avalia nos seus servidores e grava o redirecionamento para futuras petições. Evite desencurtar ligações com dados privados ou confidenciais. \nA API é limitada a 10 solicitações por hora para novas verificações. A resposta do módulo mostrará quantas petições tem pendentes.</string>
     <string name="noLinks">Nenhuma ligação detetada</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -95,6 +97,8 @@ class VirusTotalConfig extends AModuleConfig {
                 if (cannotEnableErrorId() != -1) disable();
             }
         });
+
+        views.<TextView>findViewById(R.id.label).setText(getStringWithPlaceholder(getActivity(), R.string.mVT_desc, R.string.vtLogin_url));
     }
 }
 

@@ -1,5 +1,7 @@
 package com.trianguloy.urlchecker.modules.companions;
 
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.util.Log;
@@ -196,7 +198,7 @@ public class ClearUrlCatalog implements JsonEditorInterface {
 
     @Override
     public String getEditorDescription() {
-        return cntx.getString(R.string.mClear_editor);
+        return getStringWithPlaceholder(cntx, R.string.mClear_editor, R.string.clearRules_url);
     }
 
     /** Show the updater dialog */

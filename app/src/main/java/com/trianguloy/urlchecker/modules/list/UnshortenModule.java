@@ -1,6 +1,7 @@
 package com.trianguloy.urlchecker.modules.list;
 
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.MARKER;
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
 
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -51,7 +52,7 @@ public class UnshortenModule extends AModuleData {
 
     @Override
     public AModuleConfig getConfig(ModulesActivity cntx) {
-        return new DescriptionConfig(R.string.mUnshort_desc);
+        return new DescriptionConfig(getStringWithPlaceholder(cntx, R.string.mUnshort_desc, R.string.unshorten_url));
     }
 
     @Override

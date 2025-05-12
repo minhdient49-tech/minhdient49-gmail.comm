@@ -20,11 +20,11 @@
     <!--
         about
     -->
-    <string name="txt_about">"App created by TrianguloY.
+    <string name="txt_about">"App created by %1$s.
 
-Contributions: %1$s.
-Translations: %2$s."</string>
-    <string name="link_blog">"TrianguloY's blog"</string>
+Contributions: %2$s.
+Translations: %3$s."</string>
+    <string name="link_blog">"%s's blog"</string>
     <string name="link_changelog">Changelog</string>
     <string name="link_source">Source code</string>
     <string name="link_privacy">Privacy policy</string>
@@ -283,7 +283,7 @@ Note: if you edit the patterns, new built-in patterns from app updates will not 
     <string name="mInput_desc">Displays the current URL. Press it to enter edit mode.</string>
     <!-- -->
     <string name="mVT_name">URL Scanner</string>
-    <string name="mVT_desc">When this module is enabled you can scan the URL using VirusTotal and check the report. A personal VirusTotal API key is needed for it to work, you can get one after registering for a free account here: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">When this module is enabled you can scan the URL using VirusTotal and check the report. A personal VirusTotal API key is needed for it to work, you can get one after registering for a free account here: %s .</string>
     <string name="mVT_apiKey">API key</string>
     <string name="mVT_noKey">Missing API key</string>
     <string name="mVT_tm">VirusTotal™ is a trademark of Google, Inc.</string>
@@ -310,7 +310,7 @@ You can hold to select text."</string>
     <!-- -->
     <string name="mClear_name">URL Cleaner</string>
     <string name="mClear_desc">This module removes tracking, referrer and other useless parameters from the URL. It also allows for common offline URL redirections.</string>
-    <string name="mClear_tm">Built-in catalog copied from ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Built-in catalog copied from ClearURLs: %s</string>
     <string name="mClear_clear">Apply</string>
     <string name="mClear_matches">Matches %s</string>
     <string name="mClear_blocked">- BLOCKED!</string>
@@ -341,7 +341,7 @@ You can hold to select text."</string>
     <string name="mClear_hashError">Unable to fetch the hash, make sure the url is valid and you have an active connection</string>
     <string name="mClear_hashMismatch">Hashes do not match, the file may have been tampered with. If you want to skip the check remove the hash URL</string>
     <string name="mClear_restore">Restore ClearURLs paths</string>
-    <string name="mClear_editor">"Catalog rules: They must follow the format from https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"Catalog rules: They must follow the format from %s.
 Note that any modification to the parent object 'providers' will be overwritten if the catalog is updated automatically or manually from the updater dialog. To have personal rules set them in a different parent object (any name)."</string>
     <!-- -->
     <string name="mRemove_name">Queries Remover</string>
@@ -366,7 +366,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <string name="mLog_unlimited">Unlimited</string>
     <!-- -->
     <string name="mHosts_name">Hosts labeler</string>
-    <string name="mHosts_desc">"This module labels hosts, configured either by specifying them manually or by using a remote hosts-like file. You can use it to warn about dangerous or special sites. The builtin configuration specifies StevenBlack's hosts (adware/malware, fakenews, gambling and adult content) from https://github.com/StevenBlack/hosts. Note: subdomains will also be checked, so 'x.y.z' and 'y.z' will be detected for the entry 'y.z'"</string>
+    <string name="mHosts_desc">"This module labels hosts, configured either by specifying them manually or by using a remote hosts-like file. You can use it to warn about dangerous or special sites. The builtin configuration specifies StevenBlack's hosts (adware/malware, fakenews, gambling and adult content) from %s. Note: subdomains will also be checked, so 'x.y.z' and 'y.z' will be detected for the entry 'y.z'"</string>
     <string name="mHosts_malware">adware/malware</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">no label</string>
@@ -393,7 +393,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <!-- -->
     <string name="mUnshort_name">Unshortener</string>
     <string name="mUnshort_unshort">Unshort</string>
-    <string name="mUnshort_desc">"This module will unshort links by sending them to https://unshorten.me/, which evaluates them on their servers and save the redirection for future requests. Avoid unshortening links with private or sensitive data.
+    <string name="mUnshort_desc">"This module will unshort links by sending them to %s, which evaluates them on their servers and save the redirection for future requests. Avoid unshortening links with private or sensitive data.
 Their api is rate limited to 10 requests per hour for new checks. The module response will show how many requests you have pending."</string>
     <string name="mUnshort_tm">unshorten.me free API by Unshorten.me</string>
     <string name="mUnshort_checking">Checking…</string>

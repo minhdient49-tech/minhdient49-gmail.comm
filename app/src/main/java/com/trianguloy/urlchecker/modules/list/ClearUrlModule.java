@@ -1,5 +1,6 @@
 package com.trianguloy.urlchecker.modules.list;
 
+import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
 import static com.trianguloy.urlchecker.utilities.methods.UrlUtils.decode;
 
 import android.content.Context;
@@ -100,6 +101,8 @@ class ClearUrlConfig extends AModuleConfig {
 
         views.findViewById(R.id.update).setOnClickListener(v -> catalog.showUpdater());
         views.findViewById(R.id.edit).setOnClickListener(v -> catalog.showEditor());
+
+        views.<TextView>findViewById(R.id.tm).setText(getStringWithPlaceholder(getActivity(), R.string.mClear_tm, R.string.clearRules_url));
     }
 
 }

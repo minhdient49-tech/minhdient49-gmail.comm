@@ -20,11 +20,11 @@
     <!--
         about
     -->
-    <string name="txt_about">"Aplicación creada por TrianguloY.
+    <string name="txt_about">"Aplicación creada por %1$s.
 
-Contribuciones: %1$s.
-Traducciones: %2$s."</string>
-    <string name="link_blog">Blog de TrianguloY</string>
+Contribuciones: %2$s.
+Traducciones: %3$s."</string>
+    <string name="link_blog">Blog de %s</string>
     <string name="link_changelog">Cambios</string>
     <string name="link_source">Código fuente</string>
     <string name="link_privacy">Política de privacidad</string>
@@ -225,7 +225,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mInput_desc">Muestra la URL actual. Pulsa para editarla.</string>
     <!-- -->
     <string name="mVT_name">Escáneador de la URL</string>
-    <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: https://www.virustotal.com/gui/join-us .</string>
+    <string name="mVT_desc">Cuando este módulo se habilita puedes escanear la URL mediante VirusTotal y comprobar el informe. Se necesita una clave de la API de VirusTotal para que funcione, puedes obtener una tras registrarte gratis aquí: %s .</string>
     <string name="mVT_apiKey">Clave de la API</string>
     <string name="mVT_noKey">Falta la clave de la API</string>
     <string name="mVT_tm">VirusTotal™ es una marca registrada de Google, Inc.</string>
@@ -252,7 +252,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mClear_name">Limpiador de URLs</string>
     <string name="mClear_desc">Este módulo elimina el seguimiento, la referencia y otros parámetros inútiles de la URL. También permite redirecciones de URL sin conexión comunes.</string>
-    <string name="mClear_tm">Catálogo incluido copiado de ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Catálogo incluido copiado de ClearURLs: %s</string>
     <string name="mClear_clear">Aplicar</string>
     <string name="mClear_matches">%s detectado</string>
     <string name="mClear_blocked">- BLOQUEADO!</string>
@@ -283,7 +283,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mClear_hashError">No se ha podido descargar el hash, comprueba que la url es correcta y que tienes acceso a internet</string>
     <string name="mClear_hashMismatch">Los hash no coinciden, el archivo puede haber sido manipulado. Si desea omitir la comprobación, elimine la URL del hash</string>
     <string name="mClear_restore">Restaurar direcciones de ClearURLs</string>
-    <string name="mClear_editor">Catálogo de reglas: deben seguir el formato definido en https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">Catálogo de reglas: deben seguir el formato definido en %s.
 \nTen en cuenta que las modificaciones del objeto principal \'providers\' serán sobreescritas al actualizar el catálogo automática o manualmente desde la ventana del actualizador. Para añadir reglas personales inclúyelas en un objeto padre distinto (cualquier nombre).</string>
     <!-- -->
     <string name="mRemove_name">Eliminador de parámetros</string>
@@ -302,7 +302,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mLog_empty">Sin datos</string>
     <!-- -->
     <string name="mHosts_name">Etiquetador de hosts</string>
-    <string name="mHosts_desc">"Este módulo etiqueta hosts, configurado al especificarlos directamente o al usar un fichero remoto tipo hosts. Puedes usarlo para avisar sobre sitios peligrosos o especiales. La configuración incluida corresponde a los hosts de StevenBlack (software dañino, noticias falsas, juego/apuestas y contenido de adulto) de https://github.com/StevenBlack/hosts. Nota: subdominios también se comprobarán, con lo que 'x.y.z' e 'y.z' serán detectados para la entrada 'y.z'"</string>
+    <string name="mHosts_desc">"Este módulo etiqueta hosts, configurado al especificarlos directamente o al usar un fichero remoto tipo hosts. Puedes usarlo para avisar sobre sitios peligrosos o especiales. La configuración incluida corresponde a los hosts de StevenBlack (software dañino, noticias falsas, juego/apuestas y contenido de adulto) de %s. Nota: subdominios también se comprobarán, con lo que 'x.y.z' e 'y.z' serán detectados para la entrada 'y.z'"</string>
     <string name="mHosts_malware">software dañino</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">sin etiqueta</string>
@@ -332,7 +332,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mUnshort_name">Desacortador</string>
     <string name="mUnshort_unshort">Desacortar</string>
-    <string name="mUnshort_desc">Este módulo deshacerá los enlaces cortos enviándolos a https://unshorten.me/, que los evalúa en sus servidores y guarda la redirección para futuras solicitudes. Evite deshacer enlaces cortos con datos privados o sensibles.\nSu API tiene un límite de 10 solicitudes por hora para nuevas verificaciones. La respuesta del módulo mostrará cuántas solicitudes tienes pendientes.</string>
+    <string name="mUnshort_desc">Este módulo deshacerá los enlaces cortos enviándolos a %s, que los evalúa en sus servidores y guarda la redirección para futuras solicitudes. Evite deshacer enlaces cortos con datos privados o sensibles.\nSu API tiene un límite de 10 solicitudes por hora para nuevas verificaciones. La respuesta del módulo mostrará cuántas solicitudes tienes pendientes.</string>
     <string name="mUnshort_tm">API gratuita de Unshorten.me</string>
     <string name="mUnshort_checking">Comprobando…</string>
     <string name="mUnshort_error">Error de servidor: %s</string>

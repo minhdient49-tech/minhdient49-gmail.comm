@@ -16,11 +16,11 @@
     <string name="a_settings">Impostazioni</string>
     <string name="a_about">Informazioni</string>
     <!-- about -->
-    <string name="txt_about">"App creata da TrianguloY.
+    <string name="txt_about">"App creata da %1$s.
 
-Contributi: %1$s.
-Traduzioni: %2$s."</string>
-    <string name="link_blog">Blog di TrianguloY</string>
+Contributi: %2$s.
+Traduzioni: %3$s."</string>
+    <string name="link_blog">Blog di %s</string>
     <string name="link_changelog">Changelog</string>
     <string name="link_source">Codice sorgente</string>
     <string name="link_privacy">Informativa sulla privacy</string>
@@ -120,7 +120,7 @@ Traduzioni: %2$s."</string>
     <string name="mInput_desc">Mostra l\'url corrente. Premilo per entrare nella modalita` di modifica.</string>
     <string name="mVT_name">URL Scanner</string>
     <string name="mVT_desc">"Quando questo modulo è abilitato puoi scansionare l'url utilizzando VirusTotal e visualizzare il report.
-Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi crearne una qui dopo esserti registrato con un account gratuito: https://www.virustotal.com/gui/join-us ."</string>
+Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi crearne una qui dopo esserti registrato con un account gratuito: %s ."</string>
     <string name="mVT_apiKey">chiave API</string>
     <string name="mVT_tm">VirusTotal™ è un trademark di Google, Inc.</string>
     <string name="mVT_scan">Scansiona</string>
@@ -138,7 +138,7 @@ Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi c
     <string name="mHist_desc">Quando l\'url viene modificato, sia manualmente o da altri moduli, quest\'ultimo ti consente di visualizzare e annullare le modifiche.</string>
     <string name="mClear_name">Pulitore URL</string>
     <string name="mClear_desc">Questo modulo rimuove il tracciamento i referrals e altri parametri inutili dall\'URL. Inoltre permette i comuni reindirizzamenti offline.</string>
-    <string name="mClear_tm">Lista di default presa da ClearURLs: https://docs.clearurls.xyz/latest/specs/rules/</string>
+    <string name="mClear_tm">Lista di default presa da ClearURLs: %s</string>
     <string name="mClear_clear">Applica</string>
     <string name="mClear_matches">Corrisponde %s</string>
     <string name="mClear_blocked">- BLOCCATO!</string>
@@ -169,7 +169,7 @@ Una chiave API personale di VirusTotal è richiesta per il funzionamento, puoi c
     <string name="mClear_hashError">"Non è stato possibile recuperare l'hash, controlla che l'url sia valido e che tu abbia una connessione internet funzionante."</string>
     <string name="mClear_hashMismatch">Gli hash non corrispondono, il file potrebbe essere stato modificato. Se vuoi saltare il check, rimuovi l\'url dell\'hash</string>
     <string name="mClear_restore">Ripristina percorsi ClearURLs</string>
-    <string name="mClear_editor">"Lista regole: Devono seguire il formato da https://docs.clearurls.xyz/latest/specs/rules/.
+    <string name="mClear_editor">"Lista regole: Devono seguire il formato da %s.
 Tieni conto che qualsiasi modifica ai 'providers' verrà sovrscaritta se la lista viene aggiornata automaticamente o manualmente dalla finestra degli aggiornamenti. Per avere regole custom impostale in un parent object diverso."</string>
     <string name="mRemove_name">Pulitore queries</string>
     <string name="mRemove_desc">"Con questo modulo puoi rimuovere queries dall'URL.
@@ -190,7 +190,7 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="mLog_empty">Nessun dato</string>
     <string name="mHosts_name">Categorie hosts</string>
     <string name="mHosts_desc">"Questo modulo etichetta gli hosts, e può essere configurato manualmente od utilizzando un file remoto hosts-like.
-\n    Puoi utilizzarlo per generare avvertimenti riguardo siti pericolosi o speciali. La configurazione di default utilizza la lista hosts di StevenBlack (adware/malware, fakenews, scommesse e contenuto per adulti) da https://github.com/StevenBlack/hosts"</string>
+\n    Puoi utilizzarlo per generare avvertimenti riguardo siti pericolosi o speciali. La configurazione di default utilizza la lista hosts di StevenBlack (adware/malware, fakenews, scommesse e contenuto per adulti) da %s"</string>
     <string name="mHosts_malware">adware/malware</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">nessuna categoria</string>
@@ -303,7 +303,7 @@ Per disabilitare il logging, ti basta disabilitare il modulo."</string>
     <string name="mOpen_rejected">Nascondi app se l\'URL e` stato rifiutato (un app richiede immediatamente di aprire lo stesso URL con cui e` stata aperta). Non influisce sulla condivisione.</string>
     <string name="mUnshort_name">Disaccorciatore</string>
     <string name="mUnshort_tm">unshorten.me API gratuita di Unshorten.me</string>
-    <string name="mUnshort_desc">Questo modulo disaccoricia i link inviandoli a https://unshorten.me/, che li valuta sui propri server e salva il reindirizzamento per le richieste future. Evitare di disaccorciare i link con dati privati o sensibili.\nLa loro API è limitata a 10 richieste all\'ora per i nuovi controlli. La risposta del modulo mostrerà il numero di richieste in sospeso.</string>
+    <string name="mUnshort_desc">Questo modulo disaccoricia i link inviandoli a %s, che li valuta sui propri server e salva il reindirizzamento per le richieste future. Evitare di disaccorciare i link con dati privati o sensibili.\nLa loro API è limitata a 10 richieste all\'ora per i nuovi controlli. La risposta del modulo mostrerà il numero di richieste in sospeso.</string>
     <string name="mUnshort_checking">Controllo…</string>
     <string name="mUnshort_error">Errore del server: %s</string>
     <string name="mUnshort_internal">Errore interno (%s)</string>

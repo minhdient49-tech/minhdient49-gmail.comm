@@ -287,4 +287,12 @@ public interface AndroidUtils {
         }
         cntx.getWindow().setAttributes(params);
     }
+
+    /**
+     * Returns a resource string with a single argument passed as another resource string.
+     * If @string/a="a %s" and @string/b="b" then getStringWithPlaceholder(cntx, R.string.a, R.string.b) will return "a b"
+     */
+    static String getStringWithPlaceholder(Context cntx, int stringResource, int placeholderStringResource) {
+        return cntx.getString(stringResource, cntx.getString(placeholderStringResource));
+    }
 }
