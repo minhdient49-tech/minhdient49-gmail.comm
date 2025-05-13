@@ -418,6 +418,6 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="mWebhook_error">Error al enviar a webhook</string>
     <string name="mWebhook_templates">Plantillas</string>
     <string name="mWebhook_test">Probar webhook</string>
-    <string name="mWebhook_desc">Este módulo envía URLs a un punto final webhook configurado. Cada URL es enviada con una marca de tiempo, permitiéndole recolectar y procesar URLs en su propio servidor.\n¡Gracias a anoop-b por la idea y la implementación base!\n\nConfigura la URL y el cuerpo de tu webhook para empezar a enviar URLs.\nPara el cuerpo, puedes usar los marcadores de posición $URL$ y $TIMESTAMP$.</string>
+    <string name="mWebhook_desc">Este módulo envía URLs a un punto final webhook configurado. Cada URL es enviada con una marca de tiempo, permitiéndole recolectar y procesar URLs en su propio servidor.\n¡Gracias a anoop-b por la idea y la implementación base!\n\nConfigura la URL y el cuerpo de tu webhook para empezar a enviar URLs.\nPara el cuerpo, puedes usar los marcadores de posición $URL$, $TIMESTAMP$ y $REFERRER$.</string>
     <string name="mWebhook_sending">Enviando a webhook…</string>
 </resources>
