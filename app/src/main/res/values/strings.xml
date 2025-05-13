@@ -182,6 +182,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_available_disabled">"This module is disabled, automations won't run"</string>
     <string name="auto_rule_bitly">Unshort bit.ly</string>
     <string name="auto_rule_webhook">Send everything to webhook</string>
+    <string name="auto_rule_toast">Toast example</string>
     <string name="auto_open">"Will open the url. If no expected arguments are provided, the first available app will be used (equivalent of pressing the 'open' button). If 'package' and/or 'component' arguments are provided, those will be used instead."</string>
     <string name="auto_share">"Will share the url. Equivalent of pressing the 'share' button."</string>
     <string name="auto_copy">"Will copy the url. Equivalent of pressing the 'copy' button."</string>

@@ -405,6 +405,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <string name="bck_deleteError">No se han podido borrar los elementos</string>
     <string name="auto_rule_bitly">Bit.ly no abreviado</string>
     <string name="auto_rule_webhook">Enviar todo al webhook</string>
+    <string name="auto_rule_toast">Ejemplo \'toast\'</string>
     <string name="auto_clear">Limpiará la URL. Equivale a presionar el botón \"Borrar\". Tenga en cuenta que el módulo en sí contiene una configuración automática que también borrará todas las URL de manera más eficiente y debería ser la preferida.</string>
     <string name="mWebhook_name">Webhook</string>
     <string name="mWebhook_auto_send">Enviar a webhook</string>

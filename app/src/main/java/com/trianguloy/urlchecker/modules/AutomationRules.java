@@ -76,6 +76,11 @@ public class AutomationRules extends JsonCatalog {
                         .put("action", "webhook")
                         .put("enabled", false)
                 )
+                .put(cntx.getString(R.string.auto_rule_toast), new JSONObject()
+                        .put("regex", cntx.getString(R.string.trianguloy))
+                        .put("action", "toast")
+                        .put("args", new JSONObject()
+                                .put("text", "👋🙂")))
                 ;
     }
 
