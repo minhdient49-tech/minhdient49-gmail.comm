@@ -44,10 +44,10 @@ public class LastOpened {
                 comparePrefer(from.getComponent(), another.getComponent(), url));
     }
 
-    /** Marks the [prefer] intentApp as preferred over [others]. */
-    public void prefer(IntentApp prefer, List<IntentApp> others, String url) {
+    /** Marks the [prefer] component as preferred over [others]. */
+    public void prefer(ComponentName prefer, List<IntentApp> others, String url) {
         for (var other : others) {
-            prefer(prefer.getComponent(), other.getComponent(), 1, url);
+            prefer(prefer, other.getComponent(), 1, url);
         }
     }
 

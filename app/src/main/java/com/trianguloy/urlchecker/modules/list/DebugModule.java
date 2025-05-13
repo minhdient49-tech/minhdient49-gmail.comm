@@ -3,7 +3,9 @@ package com.trianguloy.urlchecker.modules.list;
 import static java.util.Objects.requireNonNullElse;
 
 import android.content.ComponentName;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
@@ -19,7 +21,6 @@ import com.trianguloy.urlchecker.modules.AutomationRules;
 import com.trianguloy.urlchecker.services.CustomTabs;
 import com.trianguloy.urlchecker.url.UrlData;
 import com.trianguloy.urlchecker.utilities.methods.AndroidUtils;
-import com.trianguloy.urlchecker.utilities.methods.UrlUtils;
 import com.trianguloy.urlchecker.utilities.wrappers.IntentApp;
 
 import java.util.List;
@@ -101,7 +102,7 @@ class DebugDialog extends AModuleDialog {
                 SEPARATOR,
 
                 "queryIntentActivities:",
-                IntentApp.getOtherPackages(UrlUtils.getViewIntent(getUrl(), null), getActivity()).toString(),
+                IntentApp.getOtherPackages(new Intent(Intent.ACTION_VIEW, Uri.parse(getUrl())), getActivity()).toString(),
 
                 SEPARATOR,
 
@@ -109,7 +110,7 @@ class DebugDialog extends AModuleDialog {
                 getActivity().getPackageManager().queryIntentActivityOptions(
                         new ComponentName(getActivity(), MainDialog.class.getName()),
                         null,
-                        UrlUtils.getViewIntent(getUrl(), null),
+                        new Intent(Intent.ACTION_VIEW, Uri.parse(getUrl())),
                         Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ? PackageManager.MATCH_ALL : 0
                 ).toString(),
 
