@@ -82,7 +82,8 @@ class PatternConfig extends AModuleConfig {
 }
 
 class PatternDialog extends AModuleDialog {
-    public static final String APPLIED = "pattern.applied";
+    private static final String APPLIED = "pattern.applied";
+    private static final Pattern ALL_MATCH = Pattern.compile("^.*$");
 
     private TextView txt_noPatterns;
     private LinearLayout box;
@@ -131,18 +132,32 @@ class PatternDialog extends AModuleDialog {
                     url = URLEncoder.encode(url, sUTF_8);
                 }
 
-                // check matches
-                // if 'regex' matches, the pattern can match
-                // if 'regex' doesn't match, the patter doesn't match
-                var regex_matcher = Pattern.compile(data.optString("regex", "^.*$")).matcher(url);
-                var matches = regex_matcher.find();
-                if (matches && data.has("excludeRegex")) {
-                    // if 'excludeRegex' doesn't exist, the pattern can match
-                    // if 'excludeRegex' matches, the pattern doesn't matches
-                    // if 'excludeRegex' doesn't match, the pattern can match
-                    matches = !Pattern.compile(data.getString("excludeRegex")).matcher(url).find();
+                // check matches:
+                // if 'regex' doesn't exist, the pattern can match (as everything)
+                var regexMatcher = ALL_MATCH.matcher(url);
+                for (var regex : JavaUtils.parseArrayOrElement(data.get("regex"), String.class)) {
+                    regexMatcher = Pattern.compile(regex).matcher(url);
+                    if (regexMatcher.find()) {
+                        // if at least one 'regex' matches, the pattern can match (as first to match)
+                        break;
+                    } else {
+                        // if 'regex' exists and none match, the pattern doesn't match
+                        regexMatcher = null;
+                    }
                 }
-                if (matches) {
+                // if 'excludeRegex' doesn't exist, the pattern can match
+                if (regexMatcher != null && data.has("excludeRegex")) {
+                    for (var exclusions : JavaUtils.parseArrayOrElement(data.get("excludeRegex"), String.class)) {
+                        // if at least one 'excludeRegex' matches, the pattern doesn't match
+                        if (Pattern.compile(exclusions).matcher(url).find()) {
+                            regexMatcher = null;
+                            break;
+                        }
+                        // if no 'excludeRegex' match, the pattern can match
+                    }
+                }
+
+                if (regexMatcher != null) {
                     message.matches = true;
 
                     // check replacements
@@ -162,7 +177,7 @@ class PatternDialog extends AModuleDialog {
 
                     if (replacement != null) {
                         // replace url
-                        message.newUrl = regexFix.replaceAll(url, regex_matcher, replacement);
+                        message.newUrl = regexFix.replaceAll(url, regexMatcher, replacement);
 
                         // decode if required
                         if (data.optBoolean("decode")) {
