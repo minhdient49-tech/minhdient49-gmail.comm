@@ -1,3 +1,13 @@
+V 3.4
+- Improve: Rewritten VirusTotal integration: use api v3 and show more details (vote third place)
+- Improve: You can now specify the app component and/or package in the open automation
+- Improve: Allow list of strings on 'regex' and 'excludeRegex' for patterns
+- Improve: $REFERRER$ can be used on the webhook body
+- Improve: Close url editText when pressing enter
+- New: Toast automation sample
+- Fix: bold host display not working with host-only urls
+- Fix: non-clickable links on json editor
+
 V 3.3.1
 - New: Allow multiple referrers on automations
 - Fix: Automations other than the first not working
