@@ -106,6 +106,7 @@ android {
         def folder = file("src/main/res") // from this folder
         def translations = Arrays.stream(folder.list()) // from all files in the folder
                 .filter { file("$folder.path/$it/strings.xml").exists() } // and containing a strings translation
+                .filter { file("$folder.path/$it/strings.xml").text.contains("<string name=\"locale\">") } // with a valid translation
                 .collect { it }
 
         // generate buildconfig field with all locales

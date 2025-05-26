@@ -7,7 +7,9 @@
     <string name="translators">TrianguloY; PabloOQ</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish' -->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">Español</string>
     <!--
         main

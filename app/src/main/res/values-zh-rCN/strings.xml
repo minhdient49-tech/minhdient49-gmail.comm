@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Translator(s) name:
+    <!--
+        Translator(s) name:
         If you create or update a translation, add how you want to be credited here.
         For multiple translators, separate them by semicolon.
-        Example: <string name="translators">John Doe; Jane Doe</string> -->
+        Example: <string name="translators">John Doe; Jane Doe</string>
+    -->
     <string name="translators">Seviche CC; CloneWith</string>
     <!--
         Locale name:
-        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'-->
+        Write the locale name in the locale language, for users that doesn't know english. For example 'Español' instead of 'Spanish'.
+        IMPORTANT!: If not translated, the translation will be omitted.
+    -->
     <string name="locale">简体中文</string>
     <!-- main -->
     <string name="txt_info">该应用程序在打开点击的URL链接时充当中间步骤。当选择此应用程序打开它时，会显示一个带有链接相关一些信息的对话框。按下面的模块按钮来检查和配置所有可用的模块。</string>
