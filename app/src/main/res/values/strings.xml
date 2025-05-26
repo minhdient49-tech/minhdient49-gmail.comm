@@ -176,6 +176,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_notFound">"No automation with key '%s' is available. Make sure it is valid and the required module is active."</string>
     <string name="auto_editor">"Automations configuration. Format: list of objects where the key is a unique automation name and the content includes the following values:
 - 'regex': string|list: if present, a valid java regex that the url must match for the automation to run. If list, at least one regex must match. If omitted, all urls will match.
+- 'excludeRegex': string|list: if present, a valid java regex that the url must not match for the automation to run. If list, none of the regex must match. If omitted, no url will be excluded.
 - 'referrer': string|list: if present, the referrer (the app that opened the link) must exactly match this value. If list, the referrer must be one of the values. If omitted, all urls will match. You can use the debug module to check the actual value.
 - 'action': string|list, required: the key of the automation to run. If multiple they will run in order. Check below for a list of all the available keys.
 - 'args', object: values that the action may require, see the description of each action for the values they accept. Example: { …, \"args\": { \"text\": \"example\" } }
