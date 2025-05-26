@@ -174,7 +174,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
 - 'regex': string|list: if present, a valid java regex that the url must match for the automation to run. If list, at least one regex must match. If omitted, all urls will match.
 - 'referrer': string|list: if present, the referrer (the app that opened the link) must exactly match this value. If list, the referrer must be one of the values. If omitted, all urls will match. You can use the debug module to check the actual value.
 - 'action': string|list, required: the key of the automation to run. If multiple they will run in order. Check below for a list of all the available keys.
-- 'args', object: values that the action may require, see the description of each action for the values they accept.
+- 'args', object: values that the action may require, see the description of each action for the values they accept. Example: { …, \"args\": { \"text\": \"example\" } }
 - 'stop': boolean: if true, no more automations will run for the current url. False by default.
 - 'enabled': boolean: if false this automation will be skipped. True by default."</string>
     <string name="auto_available_prefix">Available automation actions (keys):</string>
@@ -182,7 +182,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_rule_bitly">Unshort bit.ly</string>
     <string name="auto_rule_webhook">Send everything to webhook</string>
     <string name="auto_rule_toast">Toast example</string>
-    <string name="auto_open">"Will open the url. If no expected arguments are provided, the first available app will be used (equivalent of pressing the 'open' button). If 'package' and/or 'component' arguments are provided, those will be used instead."</string>
+    <string name="auto_open">"Will open the url. If no expected 'args' are provided, the first available app will be used (equivalent of pressing the 'open' button). If the 'args': 'package' and/or 'component' are provided, those will be used instead."</string>
     <string name="auto_share">"Will share the url. Equivalent of pressing the 'share' button."</string>
     <string name="auto_copy">"Will copy the url. Equivalent of pressing the 'copy' button."</string>
     <string name="auto_ctabs">"Will enable ctabs. Equivalent of pressing the 'ctabs' button if disabled (even if hidden)."</string>
@@ -193,7 +193,7 @@ Hope you find the app useful! And don't hesitate to suggest features, report bug
     <string name="auto_scan">"Will scan the url. Equivalent of pressing the 'Scan' button."</string>
     <string name="auto_clear">"Will clear the url. Equivalent of pressing the 'Clear' button. Note that the module itself contains an auto setting that will also clear all urls more efficiently, and should be preferred."</string>
     <string name="auto_drawer">"Will open the drawer. Equivalent of pressing the drawer button if collapsed."</string>
-    <string name="auto_toast">Display a toast with a fixed text. The text must be provided as an argument named \'text\'.</string>
+    <string name="auto_toast">Display a toast with a fixed text. The text must be provided as an \'args\' named \'text\'.</string>
     <!--
         modules
     -->
