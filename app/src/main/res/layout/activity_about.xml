@@ -14,6 +14,7 @@
         android:orientation="vertical">
 
         <ImageButton
+            android:id="@+id/trianguloy"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:background="@android:color/transparent"

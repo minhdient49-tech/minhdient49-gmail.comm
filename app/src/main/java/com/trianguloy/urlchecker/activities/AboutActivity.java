@@ -3,12 +3,14 @@ package com.trianguloy.urlchecker.activities;
 import static com.trianguloy.urlchecker.utilities.methods.AndroidUtils.getStringWithPlaceholder;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.trianguloy.urlchecker.BuildConfig;
@@ -19,7 +21,9 @@ import com.trianguloy.urlchecker.utilities.methods.Inflater;
 import com.trianguloy.urlchecker.utilities.methods.JavaUtils.Function;
 import com.trianguloy.urlchecker.utilities.methods.LocaleUtils;
 import com.trianguloy.urlchecker.utilities.methods.PackageUtils;
+import com.trianguloy.urlchecker.utilities.methods.StreamUtils;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AboutActivity extends Activity {
@@ -92,6 +96,36 @@ public class AboutActivity extends Activity {
             v_link.setOnLongClickListener(v -> {
                 share(((String) v.getTag()));
                 return true;
+            });
+        }
+
+        // show logcat
+        if (BuildConfig.DEBUG) {
+            findViewById(R.id.trianguloy).setOnClickListener(v -> {
+
+                // get log
+                String log;
+                try {
+                    log = StreamUtils.inputStream2String(Runtime.getRuntime().exec("logcat -d").getInputStream());
+                } catch (IOException e) {
+                    log = e.toString();
+                }
+
+                // generate dialog
+                var textView = new TextView(this);
+                textView.setText(log);
+
+                // wrap into a padded scrollview for nice scrolling
+                int pad = getResources().getDimensionPixelSize(R.dimen.smallPadding);
+                var scrollView = new ScrollView(this);
+                scrollView.addView(textView);
+                scrollView.setPadding(pad, pad, pad, pad);
+                scrollView.post(() -> scrollView.scrollTo(0, textView.getHeight())); // start at bottom (new)
+
+                new AlertDialog.Builder(this)
+                        .setTitle("Logcat")
+                        .setView(scrollView)
+                        .show();
             });
         }
 
