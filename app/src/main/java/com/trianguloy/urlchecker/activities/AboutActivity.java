@@ -63,13 +63,10 @@ public class AboutActivity extends Activity {
         setTitle(R.string.a_about);
         AndroidUtils.configureUp(this);
 
-        if (!BuildConfig.DEBUG) {
-            // on release, append version to the action bar title
-            setTitle(getTitle() + " (V" + BuildConfig.VERSION_NAME + ")");
-        } else if (!"alpha".equals(BuildConfig.BUILD_TYPE)) {
-            // on no-alpha, append type
-            setTitle(getTitle() + " (" + BuildConfig.BUILD_TYPE + ")");
-        }
+        setTitle(getTitle()
+                + " (V" + BuildConfig.VERSION_NAME
+                + (!"release".equals(BuildConfig.BUILD_TYPE) ? " - " + BuildConfig.BUILD_TYPE : "")
+                + ")");
 
         // fill contributors and translators
         this.<TextView>findViewById(R.id.txt_about).setText(
