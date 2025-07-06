@@ -69,9 +69,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/smallPadding"
-            android:autoLink="none"
             android:gravity="center"
             android:text="@string/mUnshort_tm" />
+
+        <TextView
+            android:id="@+id/tm_hosts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/smallPadding"
+            android:autoLink="web"
+            android:gravity="center"
+            android:linksClickable="true"
+            android:text="@string/mHosts_tm" />
 
     </LinearLayout>
 </ScrollView>

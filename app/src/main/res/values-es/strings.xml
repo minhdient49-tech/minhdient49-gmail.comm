@@ -311,6 +311,7 @@ Hay algunos enlaces cuyo único propósito es redirigirte a otro enlace. Si el e
     <!-- -->
     <string name="mHosts_name">Etiquetador de hosts</string>
     <string name="mHosts_desc">"Este módulo etiqueta hosts, configurado al especificarlos directamente o al usar un fichero remoto tipo hosts. Puedes usarlo para avisar sobre sitios peligrosos o especiales. La configuración incluida corresponde a los hosts de StevenBlack (software dañino, noticias falsas, juego/apuestas y contenido de adulto) de %s. Nota: subdominios también se comprobarán, con lo que 'x.y.z' e 'y.z' serán detectados para la entrada 'y.z'"</string>
+    <string name="mHosts_tm">Hosts de StevenBlack de %s</string>
     <string name="mHosts_malware">software dañino</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">sin etiqueta</string>

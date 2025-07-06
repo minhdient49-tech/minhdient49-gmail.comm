@@ -83,6 +83,7 @@ public class AboutActivity extends Activity {
 
         // trademarks
         this.<TextView>findViewById(R.id.tm_clear).setText(getStringWithPlaceholder(this, R.string.mClear_tm, R.string.clearRules_url));
+        this.<TextView>findViewById(R.id.tm_hosts).setText(getStringWithPlaceholder(this, R.string.mHosts_tm, R.string.stevenBlack_url));
 
         // create links
         ViewGroup v_links = findViewById(R.id.links);

@@ -379,6 +379,7 @@ This module has been deprecated in favor of the 'Uri parts' module"</string>
     <!-- -->
     <string name="mHosts_name">Hosts labeler</string>
     <string name="mHosts_desc">"This module labels hosts, configured either by specifying them manually or by using a remote hosts-like file. You can use it to warn about dangerous or special sites. The builtin configuration specifies StevenBlack's hosts (adware/malware, fakenews, gambling and adult content) from %s. Note: subdomains will also be checked, so 'x.y.z' and 'y.z' will be detected for the entry 'y.z'"</string>
+    <string name="mHosts_tm">StevenBlack\'s hosts from %s</string>
     <string name="mHosts_malware">adware/malware</string>
     <string name="mHosts_info">Host:</string>
     <string name="mHosts_noLabel">no label</string>
