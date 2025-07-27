@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -115,17 +116,29 @@ public class AboutActivity extends Activity {
                 // generate dialog
                 var textView = new TextView(this);
                 textView.setText(log);
+                textView.setTextIsSelectable(true);
 
-                // wrap into a padded scrollview for nice scrolling
-                int pad = getResources().getDimensionPixelSize(R.dimen.smallPadding);
+                // wrap into a padded scrollview+horizontalscrollview for nice scrolling
                 var scrollView = new ScrollView(this);
                 scrollView.addView(textView);
-                scrollView.setPadding(pad, pad, pad, pad);
                 scrollView.post(() -> scrollView.scrollTo(0, textView.getHeight())); // start at bottom (new)
+                var horizontalScrollView = new HorizontalScrollView(this);
+                int pad = getResources().getDimensionPixelSize(R.dimen.smallPadding);
+                horizontalScrollView.setPadding(pad, pad, pad, pad);
+                horizontalScrollView.addView(scrollView);
 
                 new AlertDialog.Builder(this)
                         .setTitle("Logcat")
-                        .setView(scrollView)
+                        .setView(horizontalScrollView)
+                        .setPositiveButton("close", null)
+                        .setNeutralButton("clear", (dialog, which) -> {
+                            try {
+                                Runtime.getRuntime().exec("logcat -c");
+                                dialog.cancel();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        })
                         .show();
             });
         }
