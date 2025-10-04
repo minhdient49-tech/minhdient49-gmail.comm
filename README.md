@@ -1,5 +1,5 @@
-<div align="center">
-
+minhdient49@gmail.com
+Quedien69cm@outlook.com 
 <!-- ---------- Header ---------- -->
 <img src="./docs/featured.png">
 <!-- Original background with CC0 from https://www.maxpixel.net/Digital-Network-Internet-Communication-Connections-3537400 -->
